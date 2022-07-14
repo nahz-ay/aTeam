@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+$theme-gradient1: linear-gradient(141.08deg, #0A69DA 32.24%, #0856C8 115.93%, #0231A5 164.9%);
+$theme-font: 'Open Sans', sans-serif;
+$white: #fff;
+
+
+
+
+
+// ANimations
+
+@keyframes left_right {
+
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    30% {
+        // transform: translateX(0px);
+        opacity: 0.3;
+    }
+    30% {
+        opacity: 0.7;
+    }
+    70%{
+        // transform: translateX(-30px);
+        opacity:1;
+    }
+    100%{
+        transform: translateX(-80px);
+        opacity: 0.5;
+        translate: scale(1);
+    }
+
+
+
+}

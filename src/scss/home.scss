@@ -1,0 +1,83 @@
+.sidebar {
+    background: $theme-gradient1;
+    height: 90vh;
+    // width: 40%;
+    border-radius: 12px;
+
+    .logo {
+        img {
+            width: 100px;
+            height: 75px;
+        }
+
+
+    }
+
+    .hamMenu {
+        position: relative;
+        margin: 0.75rem;
+
+        div {
+            width: 20px;
+            height: 4px;
+            margin: 0.2rem;
+            background: $white;
+
+            &:nth-child(1) {
+                width: 15px;
+            }
+
+            &:nth-child(2) {
+                width: 14px;
+            }
+
+        }
+    }
+
+    .menusDiv {
+        margin-top: 2rem;
+
+        .item {
+            padding: 0.75rem;
+            color: $white;
+            min-width: 200px;
+            margin: 0.4rem 0.9rem;
+            border-radius: 180px;
+            text-align: center;
+
+            a {
+                display: flex;
+                font-size: 1em;
+                font-weight: 500;
+                align-items: center;
+                gap: 0.5rem;
+                font-family: $theme-font;
+                transition: .5s;
+                letter-spacing: 1px;
+
+
+                img {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+
+            &:hover,
+            :active {
+                background: #0076FF;
+                font-weight: 600;
+            }
+        }
+
+        .bottomBgImage {
+            position: absolute;
+            bottom: 10px;
+            animation: left_right 20s infinite;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

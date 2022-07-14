@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="src/scss/main.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        themeColor: '#0d125',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container lg:p-10">
+        <div class="flex">
+            <div class="sidebar">
+                <div class="flex justify-between">
+                    <div class="logo"> Logo</div>
+                    <div class="hamMenu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="menusDiv">
+                    <div class="item">
+                        <a>
+                            <img src="src/images/icons/home.png" alt="">
+                            Home
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a>
+                            <img src="src/images/icons/home.png" alt="">
+                            Home
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a>
+                            <img src="src/images/icons/home.png" alt="">
+                            Home
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a>
+                            <img src="src/images/icons/home.png" alt="">
+                            Home
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a>
+                            <img src="src/images/icons/home.png" alt="">
+                            Home
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a>
+                            <img src="src/images/icons/home.png" alt="">
+                            Home
+                        </a>
+                    </div>
+
+                    <div class="bottomBgImage">
+                        <img src="src/images/cloudbottom.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="contentMainDiv">
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("p").toggleClass("main");
+        });
+    });
+</script>
+
+</html>
+
+
+<!-- "watch:sass": "node-sass -w sass/*.scss style/style.css" -->
