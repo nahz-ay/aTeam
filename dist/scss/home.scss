@@ -3,12 +3,14 @@
     height: 90vh;
     // width: 40%;
     border-radius: 12px;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: .10s;
+    // transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 
     .logo {
+        padding: 1.5rem;
         img {
-            width: 100px;
-            height: 75px;
+            width: 100%;
+            height: auto;
         }
 
 
@@ -54,7 +56,6 @@
                 align-items: center;
                 gap: 0.5rem;
                 font-family: $theme-font;
-                transition: .5s;
                 letter-spacing: 1px;
 
 
@@ -86,6 +87,8 @@
 
 .sidebar-collapse {
     max-width: 66px;
+    transition: .3s;
+
 
     .logo {
         display: none;
@@ -113,13 +116,33 @@
 
     .menusDiv {
         .item {
-            min-width: 43px;
+            min-width: 42px;
 
             a {
                 gap: 2rem;
+                span{display: none;}
             }
 
 
         }
     }
+}
+
+.bgBlueSky{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: $theme-gradient2;
+    z-index: -1;
+    height: 30vh;
+    img{
+        width: 100%;
+        object-fit: contain;
+        animation: left_right 20s infinite;
+       
+    }
+}
+.contentMainDiv{
+    width: 100%;
+
 }
