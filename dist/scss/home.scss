@@ -3,6 +3,7 @@
     height: 90vh;
     // width: 40%;
     border-radius: 12px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 
     .logo {
         img {
@@ -15,7 +16,8 @@
 
     .hamMenu {
         position: relative;
-        margin: 0.75rem;
+        margin: 1.25rem;
+        transition: .5s;
 
         div {
             width: 20px;
@@ -78,6 +80,46 @@
                 width: 100%;
                 height: auto;
             }
+        }
+    }
+}
+
+.sidebar-collapse {
+    max-width: 66px;
+
+    .logo {
+        display: none;
+    }
+
+    .hamMenu {
+        margin: 1.25rem;
+
+        div {
+            width: 10px;
+            height: 4px;
+            margin: 0.2rem;
+            background: $white;
+
+            &:nth-child(1) {
+                width: 10px;
+            }
+
+            &:nth-child(2) {
+                width: 20px;
+            }
+
+        }
+    }
+
+    .menusDiv {
+        .item {
+            min-width: 43px;
+
+            a {
+                gap: 2rem;
+            }
+
+
         }
     }
 }
