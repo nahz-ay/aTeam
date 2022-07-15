@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -29,7 +30,7 @@
         <div class="flex">
             <div class="sidebar md:m-10">
                 <div class="flex justify-between">
-                    <div class="logo"> 
+                    <div class="logo">
                         <img src="/assets/images/logo.png" alt="">
                     </div>
                     <div class="hamMenu">
@@ -75,7 +76,7 @@
                             <span>Home</span>
                         </a>
                     </div>
-    
+
 
                     <div class="bottomBgImage">
                         <img src="assets/images/cloudbottom.png" alt="">
@@ -84,11 +85,75 @@
             </div>
             <div class="contentMainDiv">
 
+                <ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4"
+                    id="tabs-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a href="#tabs-home" class="
+                    nav-link
+                    block
+                    uppercase
+                    px-6
+                    py-3
+                    my-2
+                    active
+                    " id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab"
+                            aria-controls="tabs-home" aria-selected="true">
+                            <img src="/assets/images/icons/plane.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#tabs-profile" class="
+                    nav-link
+                    block
+                    uppercase
+                    px-6
+                    py-3
+                    my-2
+                    " id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab"
+                            aria-controls="tabs-profile" aria-selected="false"> <img
+                                src="/assets/images/icons/plane.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#tabs-messages" class="
+                    nav-link
+                    block
+                    uppercase
+                    px-6
+                    py-3
+                    my-2
+                    " id="tabs-messages-tab" data-bs-toggle="pill" data-bs-target="#tabs-messages" role="tab"
+                            aria-controls="tabs-messages" aria-selected="false"> <img
+                                src="/assets/images/icons/plane.png" alt="">
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="tabs-tabContent">
+                    <div class="tab-pane fade show active" id="tabs-home" role="tabpanel"
+                        aria-labelledby="tabs-home-tab">
+                        <p>Open this select menu</p>
+                        <div> One </div>>
+                    </div>
+                    <div class="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
+                        Tab 2 content
+                    </div>
+                    <div class="tab-pane fade" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
+                        Tab 3 content
+                    </div>
+                    <div class="tab-pane fade" id="tabs-contact" role="tabpanel" aria-labelledby="tabs-contact-tab">
+                        Tab 4 content
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
 
     </div>
 </body>
+<script type="text/javascript" src="/dist/js/index.min.js"></script>
 
 <script>
     $(document).ready(function () {
