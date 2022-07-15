@@ -1,6 +1,7 @@
 .sidebar {
     background: $theme-gradient1;
     height: 90vh;
+    width: 15%;
     // min-width: 200px;
     border-radius: 12px;
     transition: .10s;
@@ -145,7 +146,7 @@
 }
 .contentMainDiv{
     margin-top: 6.5rem;
-    width: 100%;
+    width: 80%;
     .nav-item a{
         margin: 0 0.45rem;
         img{
@@ -306,6 +307,94 @@
 
       
     }
+    .tripPackage{
+
+        .packageCard{
+            display: flex;
+            overflow-x: scroll;
+            gap: 2rem;
+            width: 100%;
+            -ms-overflow-style: none; /* for Internet Explorer, Edge */
+            scrollbar-width: none; /* for Firefox */
+            &::-webkit-scrollbar{
+                display: none;
+            }
+            .cardImage{
+                position: relative;
+                border-radius: 14px;
+                min-width: 250px;
+                &:after{
+                    content: "";
+                    width: 100%;
+                    position: absolute;
+                    height: 240px;
+                    top: 0;
+                    border-top-left-radius: 14px;
+                    background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+
+                }
+              
+
+                img{
+                    width: 100%;
+                    height: 240px;
+                    object-fit: cover;
+                    border-radius: 14px;
+                    &:after{
+                        content: "";
+                        width: 100%;
+                        position: absolute;
+                        height: 240px;
+                        bottom: 0;
+                        left: 0;
+                        border-bottom-left-radius: 14px;
+                        background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+    
+                    }
+
+                }
+                .cardDetails{
+                    position: absolute;
+                    top: 0;
+                    color:$white;
+                    margin: 1rem;
+                    z-index: 9;
+                    .priceTitle{
+                        font-size: 0.85em;
+                        text-transform: uppercase;
+                    }
+                    .priceValue{
+                        font-size: 1.25em;
+                        font-weight: 600;
+                    }
+                }
+                .iconDetails{
+                    position: absolute;
+                    bottom: 5px;
+                    margin: 1rem;
+                    color:$white;
+                    .cardNameIcon{                        
+                        z-index: 9;
+                        img{
+                            object-fit: cover;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }
+                        .nameCard{
+                            font-size: 1em;
+                            font-weight: 500;
+                        }
+                        .priceValue{
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+
 
 }
 
@@ -505,8 +594,8 @@
                     float: inline-end;
                     background: #DF142D;
                     border-radius: 6px;
-                    padding: 2rem 1.85rem;
-                    font-size: 1.2em;
+                    padding: 1rem;
+                    font-size: 1em;
                     font-weight: 700;
                     color:$white;
                     text-transform: capitalize;
@@ -518,6 +607,34 @@
             }
     
           
+        }
+
+        .tripPackage{
+
+            .packageCard{
+                display: flex;
+                overflow-x: auto;
+                overflow: hidden;
+                gap: 2rem;
+                .cardImage{
+                    position: relative;
+                    img{
+                        width: 100%;
+                        height: 300px;
+                        object-fit: cover;
+                    }
+                    .cardDetails{
+                        position: absolute;
+                        top: 0;
+                        .priceTitle{
+                            font-size: 0.85em;
+                        }
+                        .priceValue{
+                            font-size: 1.25em;
+                        }
+                    }
+                }
+            }
         }
     
     }

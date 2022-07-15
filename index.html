@@ -118,7 +118,7 @@
                     " id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab"
                             aria-controls="tabs-profile" aria-selected="false"> <img
                                 src="/assets/images/icons/hotels.png" alt="">
-                                <p class="text-[0.85em] mt-1 text-white">Hotels</p>
+                            <p class="text-[0.85em] mt-1 text-white">Hotels</p>
 
                         </a>
                     </li>
@@ -132,7 +132,7 @@
                     my-2
                     mx-4
                     " id="tabs-messages-tab" data-bs-toggle="pill" data-bs-target="#tabs-messages" role="tab"
-                            aria-controls="tabs-messages" aria-selected="false"> 
+                            aria-controls="tabs-messages" aria-selected="false">
                             <img src="/assets/images/icons/car.png" alt="">
                             <p class="text-[0.85em] mt-1 text-white">Villas</p>
 
@@ -149,7 +149,7 @@
                                 <p class="labelSelectBox">* From</p>
                                 <div class="customSelectBox">
                                     <ul class="list-unstyled">
-                                        <li class="init">Select from</li>
+                                        <li class="init px-10"></li>
                                         <li data-value="value 1">
                                             <div class="mainOption">Dhaka, Bangladesh</div>
                                             <div class="optionSec">Usmani airport, Sylhet</div>
@@ -162,46 +162,47 @@
                                             <div class="mainOption">Dhaka, Indonasia</div>
                                             <div class="optionSec">Usmani airport, Sylhet</div>
                                         </li>
-                                        
+
                                     </ul>
                                 </div>
                             </div>
-                            
-                                <div class="customDatePicker">
-                                    <p class="labelSelectBox">* CHECKIN-OUT</p>
-                                    <div class="flex items-center justify-center">
-                                        <div class="datepicker relative form-floating" data-mdb-toggle-button="false">
-                                            <input type="text"
-                                                class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                placeholder="Select a date" data-mdb-toggle="datepicker" />
-                                            <!-- <label for="floatingInput" class="text-gray-700">Select a date</label> -->
-                                        </div>
+
+                            <div class="customDatePicker">
+                                <p class="labelSelectBox">* CHECKIN-OUT</p>
+                                <div class="flex items-center justify-center">
+                                    <div class="datepicker relative form-floating" data-mdb-toggle-button="false">
+                                        <input type="text"
+                                            class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                            placeholder="Select a date" data-mdb-toggle="datepicker" />
+                                        <!-- <label for="floatingInput" class="text-gray-700">Select a date</label> -->
                                     </div>
                                 </div>
-                        
+                            </div>
 
-                            
-                                <div class="customDropDown">
-                                    <p class="labelSelectBox">* To</p>
-                                    <input type="text"
-                                        class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none px-4"
-                                        value="3 adult - 1 children - 2 room" />
-                                </div>
-                            
-                            
-                                <div class="customDropDown">
-                                    <p class="labelSelectBox">* More</p>
-                                    <input type="text"
-                                        class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none px-4"
-                                        value="More" />
-                                </div>
-                            
+
+
+                            <div class="customDropDown">
+                                <p class="labelSelectBox">* To</p>
+                                <input type="text"
+                                    class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none px-4"
+                                    value="3 adult - 1 children - 2 room" />
+                            </div>
+
+
+                            <div class="customDropDown">
+                                <p class="labelSelectBox">* More</p>
+                                <input type="text"
+                                    class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none px-4"
+                                    value="More" />
+                            </div>
+
                             <div class="flex justify-center self-end mb-6">
                                 <div class="form-check customFormCheck">
                                     <input
                                         class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                                         type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label inline-block text-gray-800 mt-1" for="flexCheckDefault">
+                                    <label class="form-check-label inline-block text-gray-800 mt-1"
+                                        for="flexCheckDefault">
                                         iam traveling for work
                                     </label>
                                 </div>
@@ -226,6 +227,83 @@
                     </div>
                     <div class="tab-pane fade" id="tabs-contact" role="tabpanel" aria-labelledby="tabs-contact-tab">
                         Tab 4 content
+                    </div>
+                </div>
+
+                <div class="tripPackage md:py-10 my-5 w-full">
+                    <div class="flex">
+                        <div class="h2"> Trip Package</div>
+                        <div>View all</div>
+                    </div>
+                    <div class="packageCard">
+                        <div class="cardImage">
+                            <img src="/assets/images/Fond.png" alt="">
+                            <div class="cardDetails">
+                                <div class="priceTitle"> starts from</div>
+                                <div class="priceValue"> $599</div>
+                            </div>
+                            <div class="iconDetails">
+                                <div class="flex gap-2">
+                                    <div class="cardNameIcon"> <img src="/assets/images/Fond.png" alt=""></div>
+                                    <div class="flex flex-col">
+                                        <div class="nameCard">Thailand</div>
+                                        <div class="caption">Holidays</div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+
+                           
+
+                        </div>
+                        <div class="cardImage">
+                            <img src="/assets/images/image2.png" alt="">
+                            <div class="cardDetails">
+                                <div class="priceTitle"> starts from</div>
+                                <div class="priceValue"> $599</div>
+                            </div>
+
+                        </div>
+                        <div class="cardImage">
+                            <img src="/assets/images/Fond.png" alt="">
+                            <div class="cardDetails">
+                                <div class="priceTitle"> starts from</div>
+                                <div class="priceValue"> $599</div>
+                            </div>
+
+                        </div>
+                        <div class="cardImage">
+                            <img src="/assets/images/Fond.png" alt="">
+                            <div class="cardDetails">
+                                <div class="priceTitle"> starts from</div>
+                                <div class="priceValue"> $599</div>
+                            </div>
+
+                        </div>
+                        <div class="cardImage">
+                            <img src="/assets/images/Fond.png" alt="">
+                            <div class="cardDetails">
+                                <div class="priceTitle"> starts from</div>
+                                <div class="priceValue"> $599</div>
+                            </div>
+
+                        </div>
+                        <div class="cardImage">
+                            <img src="/assets/images/Fond.png" alt="">
+                            <div class="cardDetails">
+                                <div class="priceTitle"> starts from</div>
+                                <div class="priceValue"> $599</div>
+                            </div>
+
+                        </div>
+                        <div class="cardImage">
+                            <img src="/assets/images/Fond.png" alt="">
+                            <div class="cardDetails">
+                                <div class="priceTitle"> starts from</div>
+                                <div class="priceValue"> $599</div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 

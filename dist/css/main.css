@@ -22,6 +22,7 @@
 .sidebar {
   background: linear-gradient(141.08deg, #0A69DA 32.24%, #0856C8 115.93%, #0231A5 164.9%);
   height: 90vh;
+  width: 15%;
   border-radius: 12px;
   transition: 0.1s;
 }
@@ -135,7 +136,7 @@
 
 .contentMainDiv {
   margin-top: 6.5rem;
-  width: 100%;
+  width: 80%;
 }
 .contentMainDiv .nav-item a {
   margin: 0 0.45rem;
@@ -287,6 +288,86 @@
 }
 .contentMainDiv .tab-content .btnDiv button:hover {
   background: #a60316;
+}
+.contentMainDiv .tripPackage .packageCard {
+  display: flex;
+  overflow-x: scroll;
+  gap: 2rem;
+  width: 100%;
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+}
+.contentMainDiv .tripPackage .packageCard::-webkit-scrollbar {
+  display: none;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage {
+  position: relative;
+  border-radius: 14px;
+  min-width: 250px;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 240px;
+  top: 0;
+  border-top-left-radius: 14px;
+  background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+}
+.contentMainDiv .tripPackage .packageCard .cardImage img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage img:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 240px;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 14px;
+  background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .cardDetails {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  margin: 1rem;
+  z-index: 9;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .cardDetails .priceTitle {
+  font-size: 0.85em;
+  text-transform: uppercase;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .cardDetails .priceValue {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails {
+  position: absolute;
+  bottom: 5px;
+  margin: 1rem;
+  color: #fff;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon {
+  z-index: 9;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon img {
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon .nameCard {
+  font-size: 1em;
+  font-weight: 500;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon .priceValue {
+  font-size: 0.9em;
 }
 
 @media screen and (max-width: 768px) {
@@ -472,8 +553,8 @@
     float: inline-end;
     background: #DF142D;
     border-radius: 6px;
-    padding: 2rem 1.85rem;
-    font-size: 1.2em;
+    padding: 1rem;
+    font-size: 1em;
     font-weight: 700;
     color: #fff;
     text-transform: capitalize;
@@ -481,5 +562,29 @@
   }
   .contentMainDiv .tab-content .btnDiv button:hover {
     background: #a60316;
+  }
+  .contentMainDiv .tripPackage .packageCard {
+    display: flex;
+    overflow-x: auto;
+    overflow: hidden;
+    gap: 2rem;
+  }
+  .contentMainDiv .tripPackage .packageCard .cardImage {
+    position: relative;
+  }
+  .contentMainDiv .tripPackage .packageCard .cardImage img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .contentMainDiv .tripPackage .packageCard .cardImage .cardDetails {
+    position: absolute;
+    top: 0;
+  }
+  .contentMainDiv .tripPackage .packageCard .cardImage .cardDetails .priceTitle {
+    font-size: 0.85em;
+  }
+  .contentMainDiv .tripPackage .packageCard .cardImage .cardDetails .priceValue {
+    font-size: 1.25em;
   }
 }
