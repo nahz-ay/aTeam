@@ -1,9 +1,10 @@
 .sidebar {
     background: $theme-gradient1;
     height: 90vh;
-    // width: 40%;
+    // min-width: 200px;
     border-radius: 12px;
     transition: .10s;
+  
     // transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 
     .logo {
@@ -83,10 +84,12 @@
             }
         }
     }
+   
 }
 
+
 .sidebar-collapse {
-    max-width: 66px;
+    min-width: 66px;
     transition: .3s;
 
 
@@ -141,13 +144,14 @@
     }
 }
 .contentMainDiv{
-    margin-top: 5rem;
+    margin-top: 6.5rem;
     width: 100%;
     .nav-item a{
-        margin: 0 0.2rem;
+        margin: 0 0.45rem;
         img{
             width: 100%;
             height: auto;
+            max-width: 23px;
         }
         &:hover{
             background: $theme-color;
@@ -168,32 +172,353 @@
         width: 97%;
         border-radius: 16px;
         box-shadow: $box-shadow;
-        select{
-            background: #EEF0F4;
-            border: 0;
-            border-radius: 4px;
-            width: 100%;
-            height: 78px;
-            &:focus,:focus-visible{
-                box-shadow: none;
-                outline: 0;
-                border: 0;
-            }
-            .optionItem{
-                padding: 0.5rem;
-                background: #EEF0F4;
-                h4{
-                    font-weight: 600;
-                    display: block;
-                    width: 100%;
-                }
-                p{
-                    font-weight: 400;
-                    font-size: 0.75em;
-                }
-            }
-           
+      // Custom selectBox ui li-------------------
+        .labelSelectBox{
+            position: absolute;
+            margin-top: 0rem;
+            color: #475073;
+            font-size: 0.85em;
+            padding: 0.75rem 1rem;
         }
+        .customSelectBox{
+            ul{
+                height: 88px;
+                width: 483px;
+                background: #EEF0F4;
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                li{
+                    padding: 1.5rem 1rem;
+                     z-index: 99;
+                     display: flex;
+                     flex-direction: column;
+                    width: 100%;
+                    .mainOption{
+                       @include textInput;
+
+                    }
+                    .optionSec{
+                        font-size: 0.8em;
+                        font-weight: 400;
+                        line-height: 20px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                    }
+
+                    &:not(.init){
+                        float: left; display: none; background: #ddd;
+                        &:hover{
+                            background:$theme-color;
+                            color:$white;
+                        }
+                    }
+                    .selectedOption:not(.init){
+                        &:hover{
+                            background: $theme-color;
+                            color:$white;
+                        }
+                    }
+                }
+               }
+        }
+        .customDatePicker{
+            
+            .labelSelectBox{
+                position: absolute;
+                margin-top: 0rem;
+                color: #475073;
+                font-size: 0.85em;
+                padding: 0.75rem 1.5rem;
+                z-index: 9;
+
+            }
+                .form-floating>.form-control{
+                    @include textInput;
+                    background: #EEF0F4 !important;
+                    height: 88px;
+                    border: 0;
+                    border-radius: 8px;
+                    &:focus,:focus-visible{
+                        box-shadow: none;
+                        border: 0;
+                        outline: 0;
+                    }
+
+                }
+            
+          
+        }
+
+        .customDropDown{
+            @extend .customDatePicker;
+            margin-right: 1rem;
+            .form-control{
+                @include textInput;
+                background: #EEF0F4 !important;
+                height: 88px;
+                border: 0;
+                border-radius: 8px;
+                &:focus,:focus-visible{
+                    box-shadow: none;
+                    border: 0;
+                    outline: 0;
+                }
+            }
+        }
+        .customFormCheck{
+            @extend .customDropDown;
+            display: flex;
+            align-items: center;
+            input{
+                width: 24px;
+                height: 24px;
+            }
+            .form-check-label {
+                font-family: Open Sans;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 19px;
+                letter-spacing: 0em;
+                text-align: left;
+                
+            }
+        }
+
+        .btnDiv{
+            margin-left: auto;
+            justify-content: flex-end;
+            button{
+                float: inline-end;
+                background: #DF142D;
+                border-radius: 6px;
+                padding: 1.85rem;
+                font-size: 1em;
+                font-weight: 700;
+                color:$white;
+                text-transform: capitalize;
+                transition: .3s;
+                &:hover{
+                    background: #a60316;
+                }
+            }
+        }
+
+      
     }
 
+}
+
+@media screen and (max-width:768px) {
+    .sidebar{
+        min-width: 66px;
+        transition: .3s;
+    
+    
+        .logo {
+            display: none;
+        }
+    
+        .hamMenu {
+            margin: 1.25rem;
+    
+            div {
+                width: 10px;
+                height: 4px;
+                margin: 0.2rem;
+                background: $white;
+    
+                &:nth-child(1) {
+                    width: 10px;
+                }
+    
+                &:nth-child(2) {
+                    width: 20px;
+                }
+    
+            }
+        }
+    
+        .menusDiv {
+            .item {
+                min-width: 42px;
+    
+                a {
+                    gap: 2rem;
+                    span{display: none;}
+                }
+    
+    
+            }
+        }
+    }
+    .contentMainDiv{
+        margin-top: 1.5rem;
+        width: 100%;
+        margin: 1rem;
+        .nav-item a{
+            margin: 0 0.45rem;
+            img{
+                width: 100%;
+                height: auto;
+                max-width: 13px;
+            }
+            &:hover{
+                background: $theme-color;
+                color:$white;
+                border-radius: 8px;
+            }
+        }
+       
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+            background: $theme-color;
+            color:$white;
+            border-radius: 8px;
+        }
+    
+        .tab-content{
+            padding: 1rem;
+            background: $white;
+            width: 92%;
+            margin: 0.75rem;
+            border-radius: 16px;
+            box-shadow: $box-shadow;
+          // Custom selectBox ui li-------------------
+            .labelSelectBox{
+                position: absolute;
+                margin-top: 0rem;
+                color: #475073;
+                font-size: 0.85em;
+                padding: 0.75rem 1rem;
+            }
+            .customSelectBox{
+                ul{
+                    height: 88px;
+                    width: 100%;
+                    min-width: 234px;
+                    background: #EEF0F4;
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    li{
+                        padding: 1.5rem 1rem;
+                         z-index: 99;
+                         display: flex;
+                         flex-direction: column;
+                        width: 100%;
+                        .mainOption{
+                           @include textInput;
+    
+                        }
+                        .optionSec{
+                            font-size: 0.8em;
+                            font-weight: 400;
+                            line-height: 20px;
+                            letter-spacing: 0em;
+                            text-align: left;
+                        }
+    
+                        &:not(.init){
+                            float: left; display: none; background: #ddd;
+                            &:hover{
+                                background:$theme-color;
+                                color:$white;
+                            }
+                        }
+                        .selectedOption:not(.init){
+                            &:hover{
+                                background: $theme-color;
+                                color:$white;
+                            }
+                        }
+                    }
+                   }
+            }
+            .customDatePicker{
+                .labelSelectBox{
+                    position: absolute;
+                    margin-top: 0rem;
+                    color: #475073;
+                    font-size: 0.85em;
+                    padding: 0.75rem 1rem;
+                    z-index: 9;
+    
+                }
+                    .form-floating>.form-control{
+                        @include textInput;
+                        background: #EEF0F4 !important;
+                        height: 88px;
+                        border: 0;
+                        border-radius: 8px;
+                        &:focus,:focus-visible{
+                            box-shadow: none;
+                            border: 0;
+                            outline: 0;
+                        }
+    
+                    }
+                
+              
+            }
+    
+            .customDropDown{
+                @extend .customDatePicker;
+                margin-right: 0rem;
+                .form-control{
+                    @include textInput;
+                    background: #EEF0F4 !important;
+                    height: 88px;
+                    border: 0;
+                    border-radius: 8px;
+                    width: 100%;
+                    &:focus,:focus-visible{
+                        box-shadow: none;
+                        border: 0;
+                        outline: 0;
+                    }
+                }
+            }
+            .customFormCheck{
+                width: 100%;
+                @extend .customDropDown;
+                display: flex;
+                align-items: center;
+                input{
+                    width: 24px;
+                    height: 24px;
+                }
+                .form-check-label {
+                    font-family: Open Sans;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 19px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    
+                }
+            }
+    
+            .btnDiv{
+                margin-left: auto;
+                justify-content: flex-end;
+                button{
+                    float: inline-end;
+                    background: #DF142D;
+                    border-radius: 6px;
+                    padding: 2rem 1.85rem;
+                    font-size: 1.2em;
+                    font-weight: 700;
+                    color:$white;
+                    text-transform: capitalize;
+                    transition: .3s;
+                    &:hover{
+                        background: #a60316;
+                    }
+                }
+            }
+    
+          
+        }
+    
+    }
 }

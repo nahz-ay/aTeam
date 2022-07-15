@@ -89,7 +89,7 @@
 }
 
 .sidebar-collapse {
-  max-width: 66px;
+  min-width: 66px;
   transition: 0.3s;
 }
 .sidebar-collapse .logo {
@@ -134,15 +134,16 @@
 }
 
 .contentMainDiv {
-  margin-top: 5rem;
+  margin-top: 6.5rem;
   width: 100%;
 }
 .contentMainDiv .nav-item a {
-  margin: 0 0.2rem;
+  margin: 0 0.45rem;
 }
 .contentMainDiv .nav-item a img {
   width: 100%;
   height: auto;
+  max-width: 23px;
 }
 .contentMainDiv .nav-item a:hover {
   background: #0A6ADA;
@@ -159,30 +160,326 @@
   background: #fff;
   width: 97%;
   border-radius: 16px;
-  box-shadow: 10px 10px 14px -3px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 10px 14px -3px rgba(0, 0, 0, 0.41);
 }
-.contentMainDiv .tab-content select {
+.contentMainDiv .tab-content .labelSelectBox {
+  position: absolute;
+  margin-top: 0rem;
+  color: #475073;
+  font-size: 0.85em;
+  padding: 0.75rem 1rem;
+}
+.contentMainDiv .tab-content .customSelectBox ul {
+  height: 88px;
+  width: 483px;
   background: #EEF0F4;
-  border: 0;
-  border-radius: 4px;
-  width: 100%;
-  height: 78px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
 }
-.contentMainDiv .tab-content select:focus, .contentMainDiv .tab-content select :focus-visible {
-  box-shadow: none;
-  outline: 0;
-  border: 0;
-}
-.contentMainDiv .tab-content select .optionItem {
-  padding: 0.5rem;
-  background: #EEF0F4;
-}
-.contentMainDiv .tab-content select .optionItem h4 {
-  font-weight: 600;
-  display: block;
+.contentMainDiv .tab-content .customSelectBox ul li {
+  padding: 1.5rem 1rem;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
-.contentMainDiv .tab-content select .optionItem p {
+.contentMainDiv .tab-content .customSelectBox ul li .mainOption {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0.45rem 0;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+}
+.contentMainDiv .tab-content .customSelectBox ul li .optionSec {
+  font-size: 0.8em;
   font-weight: 400;
-  font-size: 0.75em;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.contentMainDiv .tab-content .customSelectBox ul li:not(.init) {
+  float: left;
+  display: none;
+  background: #ddd;
+}
+.contentMainDiv .tab-content .customSelectBox ul li:not(.init):hover {
+  background: #0A6ADA;
+  color: #fff;
+}
+.contentMainDiv .tab-content .customSelectBox ul li .selectedOption:not(.init):hover {
+  background: #0A6ADA;
+  color: #fff;
+}
+.contentMainDiv .tab-content .customDatePicker .labelSelectBox, .contentMainDiv .tab-content .customDropDown .labelSelectBox, .contentMainDiv .tab-content .customFormCheck .labelSelectBox {
+  position: absolute;
+  margin-top: 0rem;
+  color: #475073;
+  font-size: 0.85em;
+  padding: 0.75rem 1.5rem;
+  z-index: 9;
+}
+.contentMainDiv .tab-content .customDatePicker .form-floating > .form-control, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0.45rem 0;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+  background: #EEF0F4 !important;
+  height: 88px;
+  border: 0;
+  border-radius: 8px;
+}
+.contentMainDiv .tab-content .customDatePicker .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control :focus-visible {
+  box-shadow: none;
+  border: 0;
+  outline: 0;
+}
+.contentMainDiv .tab-content .customDropDown, .contentMainDiv .tab-content .customFormCheck {
+  margin-right: 1rem;
+}
+.contentMainDiv .tab-content .customDropDown .form-control, .contentMainDiv .tab-content .customFormCheck .form-control {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0.45rem 0;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+  background: #EEF0F4 !important;
+  height: 88px;
+  border: 0;
+  border-radius: 8px;
+}
+.contentMainDiv .tab-content .customDropDown .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-control :focus-visible {
+  box-shadow: none;
+  border: 0;
+  outline: 0;
+}
+.contentMainDiv .tab-content .customFormCheck {
+  display: flex;
+  align-items: center;
+}
+.contentMainDiv .tab-content .customFormCheck input {
+  width: 24px;
+  height: 24px;
+}
+.contentMainDiv .tab-content .customFormCheck .form-check-label {
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.contentMainDiv .tab-content .btnDiv {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+.contentMainDiv .tab-content .btnDiv button {
+  float: inline-end;
+  background: #DF142D;
+  border-radius: 6px;
+  padding: 1.85rem;
+  font-size: 1em;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.contentMainDiv .tab-content .btnDiv button:hover {
+  background: #a60316;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    min-width: 66px;
+    transition: 0.3s;
+  }
+  .sidebar .logo {
+    display: none;
+  }
+  .sidebar .hamMenu {
+    margin: 1.25rem;
+  }
+  .sidebar .hamMenu div {
+    width: 10px;
+    height: 4px;
+    margin: 0.2rem;
+    background: #fff;
+  }
+  .sidebar .hamMenu div:nth-child(1) {
+    width: 10px;
+  }
+  .sidebar .hamMenu div:nth-child(2) {
+    width: 20px;
+  }
+  .sidebar .menusDiv .item {
+    min-width: 42px;
+  }
+  .sidebar .menusDiv .item a {
+    gap: 2rem;
+  }
+  .sidebar .menusDiv .item a span {
+    display: none;
+  }
+
+  .contentMainDiv {
+    margin-top: 1.5rem;
+    width: 100%;
+    margin: 1rem;
+  }
+  .contentMainDiv .nav-item a {
+    margin: 0 0.45rem;
+  }
+  .contentMainDiv .nav-item a img {
+    width: 100%;
+    height: auto;
+    max-width: 13px;
+  }
+  .contentMainDiv .nav-item a:hover {
+    background: #0A6ADA;
+    color: #fff;
+    border-radius: 8px;
+  }
+  .contentMainDiv .nav-tabs .nav-item.show .nav-link, .contentMainDiv .nav-tabs .nav-link.active {
+    background: #0A6ADA;
+    color: #fff;
+    border-radius: 8px;
+  }
+  .contentMainDiv .tab-content {
+    padding: 1rem;
+    background: #fff;
+    width: 92%;
+    margin: 0.75rem;
+    border-radius: 16px;
+    box-shadow: 0px 10px 14px -3px rgba(0, 0, 0, 0.41);
+  }
+  .contentMainDiv .tab-content .labelSelectBox {
+    position: absolute;
+    margin-top: 0rem;
+    color: #475073;
+    font-size: 0.85em;
+    padding: 0.75rem 1rem;
+  }
+  .contentMainDiv .tab-content .customSelectBox ul {
+    height: 88px;
+    width: 100%;
+    min-width: 234px;
+    background: #EEF0F4;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contentMainDiv .tab-content .customSelectBox ul li {
+    padding: 1.5rem 1rem;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .contentMainDiv .tab-content .customSelectBox ul li .mainOption {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0.45rem 0;
+    line-height: 16px;
+    letter-spacing: 0.0025em;
+  }
+  .contentMainDiv .tab-content .customSelectBox ul li .optionSec {
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .contentMainDiv .tab-content .customSelectBox ul li:not(.init) {
+    float: left;
+    display: none;
+    background: #ddd;
+  }
+  .contentMainDiv .tab-content .customSelectBox ul li:not(.init):hover {
+    background: #0A6ADA;
+    color: #fff;
+  }
+  .contentMainDiv .tab-content .customSelectBox ul li .selectedOption:not(.init):hover {
+    background: #0A6ADA;
+    color: #fff;
+  }
+  .contentMainDiv .tab-content .customDatePicker .labelSelectBox, .contentMainDiv .tab-content .customDropDown .labelSelectBox, .contentMainDiv .tab-content .customFormCheck .labelSelectBox {
+    position: absolute;
+    margin-top: 0rem;
+    color: #475073;
+    font-size: 0.85em;
+    padding: 0.75rem 1rem;
+    z-index: 9;
+  }
+  .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0.45rem 0;
+    line-height: 16px;
+    letter-spacing: 0.0025em;
+    background: #EEF0F4 !important;
+    height: 88px;
+    border: 0;
+    border-radius: 8px;
+  }
+  .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control :focus-visible {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+  }
+  .contentMainDiv .tab-content .customDropDown, .contentMainDiv .tab-content .customFormCheck {
+    margin-right: 0rem;
+  }
+  .contentMainDiv .tab-content .customDropDown .form-control, .contentMainDiv .tab-content .customFormCheck .form-control {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0.45rem 0;
+    line-height: 16px;
+    letter-spacing: 0.0025em;
+    background: #EEF0F4 !important;
+    height: 88px;
+    border: 0;
+    border-radius: 8px;
+    width: 100%;
+  }
+  .contentMainDiv .tab-content .customDropDown .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-control :focus-visible {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+  }
+  .contentMainDiv .tab-content .customFormCheck {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .contentMainDiv .tab-content .customFormCheck input {
+    width: 24px;
+    height: 24px;
+  }
+  .contentMainDiv .tab-content .customFormCheck .form-check-label {
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .contentMainDiv .tab-content .btnDiv {
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+  .contentMainDiv .tab-content .btnDiv button {
+    float: inline-end;
+    background: #DF142D;
+    border-radius: 6px;
+    padding: 2rem 1.85rem;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #fff;
+    text-transform: capitalize;
+    transition: 0.3s;
+  }
+  .contentMainDiv .tab-content .btnDiv button:hover {
+    background: #a60316;
+  }
 }
