@@ -479,7 +479,51 @@ body{
             }
         }
     }
-    
+    .perfectDeals{
+        background: linear-gradient(267.11deg, #FF7B71 9.04%, #FF4A3C 93.1%);
+        border-radius: 14px;
+        height: 25vh;
+        position: relative;
+        img{
+            position: absolute;
+            width: 550px;
+            height: auto;
+            bottom: 0;
+            left: 40%;
+        }
+        .textDiv{
+            font-size: 1.75em;
+            font-weight: 500;
+        }
+        .boldPrice{
+            font-size: 3.25em;
+            font-weight: 700;
+            position: relative;
+            margin-top: -12px;
+            color: #FFC54D;
+            display: flex;
+            align-items: baseline;
+            p{
+                font-weight: 300 !important;
+                font-size: .5em;
+            margin-top: -12px;
+
+            }
+        }
+        .btnDiv{
+            position: absolute;
+            right: 4rem;
+            bottom: 4rem;
+            button{
+                background: #FF9189;
+                border-radius: 6px;
+                color: $white;
+                padding: 1rem 2
+                .5rem;
+            }
+        }
+    }
+
 
 
 }

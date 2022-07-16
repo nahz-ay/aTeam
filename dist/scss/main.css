@@ -441,6 +441,48 @@ body {
   font-weight: 400;
   color: #475073;
 }
+.contentMainDiv .perfectDeals {
+  background: linear-gradient(267.11deg, #FF7B71 9.04%, #FF4A3C 93.1%);
+  border-radius: 14px;
+  height: 25vh;
+  position: relative;
+}
+.contentMainDiv .perfectDeals img {
+  position: absolute;
+  width: 550px;
+  height: auto;
+  bottom: 0;
+  left: 40%;
+}
+.contentMainDiv .perfectDeals .textDiv {
+  font-size: 1.75em;
+  font-weight: 500;
+}
+.contentMainDiv .perfectDeals .boldPrice {
+  font-size: 3.25em;
+  font-weight: 700;
+  position: relative;
+  margin-top: -12px;
+  color: #FFC54D;
+  display: flex;
+  align-items: baseline;
+}
+.contentMainDiv .perfectDeals .boldPrice p {
+  font-weight: 300 !important;
+  font-size: 0.5em;
+  margin-top: -12px;
+}
+.contentMainDiv .perfectDeals .btnDiv {
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+}
+.contentMainDiv .perfectDeals .btnDiv button {
+  background: #FF9189;
+  border-radius: 6px;
+  color: #fff;
+  padding: 1rem 2 0.5rem;
+}
 
 @media screen and (max-width: 768px) {
   .sidebar {
