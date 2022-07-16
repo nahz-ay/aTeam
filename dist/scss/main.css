@@ -152,6 +152,22 @@ body {
   z-index: 99;
   height: 33vh;
 }
+.bgBlueSky .clouds {
+  animation: left_right 20s infinite;
+}
+.bgBlueSky .clouds2 {
+  position: absolute;
+  left: 90%;
+  width: 200px;
+}
+.bgBlueSky .clouds4 {
+  position: absolute;
+  left: 50%;
+  width: 200px;
+}
+.bgBlueSky .clouds1 {
+  width: 550px;
+}
 .bgBlueSky .planeObject {
   width: 200px;
   height: auto;

@@ -164,6 +164,23 @@ body{
     background: $theme-gradient2;
     z-index: 99;
     height: 33vh;
+    .clouds{
+        animation: left_right 20s infinite;
+        // display: none !important;
+    }
+    .clouds2{
+        position: absolute;
+        left: 90%;
+        width: 200px;
+    }
+    .clouds4{
+        position: absolute;
+        left: 50%;
+        width: 200px;
+    }
+    .clouds1{
+        width: 550px;
+    }
    
     .planeObject{
         width: 200px;
@@ -171,6 +188,7 @@ body{
         position: absolute;
         left: 70%;
         bottom: 29%;
+
     }
 }
 .TopnavDiv{
