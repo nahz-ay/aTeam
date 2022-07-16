@@ -23,13 +23,15 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container relative">
         <div class="bgBlueSky">
-            <img src="/assets/images/cloudbottom.png" class="max-w-full h-auto" alt="">
+            <img src="/assets/images/plane.png" class="planeObject" alt="">
+            <img src="/assets/images/cloudbottom.png" alt="">
         </div>
+        
         <div class="flex">
             <!-- sidebar starts here -->
-       <div class="sticky top-0 relative">
+       <div class="sticky top-0 relative z-[99]">
         <div class="sidebar md:m-2 lg:m-10">
             <div class="flex justify-between">
                 <div class="logo">
@@ -115,8 +117,16 @@
             <!-- sidebar Ends here -->
 
             <!-- contetn Main Div------ -->
-            <div class="contentMainDiv ">
-                <ul class="nav nav-tabs flex flex-row flex-wrap list-none border-b-0 pl-0 md:mb-4 sticky top-5 z-[99] p-5" id="tabs-tab"
+            <div class="contentMainDiv">
+                <div class="TopnavDiv sticky top-8">
+                    <div class="partnerDiv">
+                        <img src="/assets/images/image2.png" alt="">Become a partner
+                    </div>
+                    <div class="partnerDiv">
+                        <img src="/assets/images/image2.png" alt="">Become a partner
+                    </div>
+                </div>
+                <ul class="nav nav-tabs flex flex-row flex-wrap list-none border-b-0 pl-0 md:mb-4 sticky top-5 z-[99]" id="tabs-tab"
                     role="tablist">
                     <li class="nav-item" role="presentation">
                         <a href="#tabs-home" class=" flex flex-col items-center
@@ -171,7 +181,7 @@
                 <div class="tab-content" id="tabs-tabContent">
                     <div class="tab-pane fade show active" id="tabs-home" role="tabpanel"
                         aria-labelledby="tabs-home-tab">
-                        <div class="flex flex-wrap md:gap-4 gap-[0.5rem] justify-start items-center w-full">
+                        <div class="flex flex-wrap md:gap-4  items-center gap-[0.5rem] justify-start items-center w-full">
 
                             <div class="relative">
                                 <p class="labelSelectBox">* From</p>
@@ -390,9 +400,9 @@
                         <div><p>View all</p></div>
                     </div>
 
-                    <div class="grid grid-cols-3">
+                    <div class="grid md:grid-cols-3 sm:grid-cols-2">
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4 items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -403,7 +413,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -414,7 +424,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -425,7 +435,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -436,7 +446,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -447,7 +457,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -458,7 +468,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -469,7 +479,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -480,7 +490,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -491,7 +501,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -502,7 +512,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -513,7 +523,7 @@
                             </div>
                         </div>
                         <div class="offerItem">
-                            <div class="flex gap-4">
+                            <div class="flex gap-4  items-center">
                                 <div class="iconDiv">
                                     <img src="/assets/images/Fond.png" alt="">
                                 </div>
@@ -683,6 +693,7 @@
         $(".hamMenu").click(function () {
             // alert("clikced");
             $(".sidebar").toggleClass("sidebar-collapse");
+            $(".contentMainDiv").toggleClass("contentMainDivpl");
         });
         // sidebar collaspe/expand ENds -----------------
 

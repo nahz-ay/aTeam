@@ -24,6 +24,7 @@ body {
 }
 
 .sidebar {
+  z-index: 99;
   background: linear-gradient(141.08deg, #0A69DA 32.24%, #0856C8 115.93%, #0231A5 164.9%);
   border-radius: 12px;
   transition: 0.1s;
@@ -144,23 +145,58 @@ body {
 }
 
 .bgBlueSky {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   background: linear-gradient(168.05deg, #023B96 5.04%, #022357 91.26%);
-  z-index: -1;
-  height: 30vh;
+  z-index: 99;
+  height: 33vh;
 }
-.bgBlueSky img {
-  width: 100%;
-  object-fit: contain;
+.bgBlueSky .planeObject {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 70%;
+  bottom: 29%;
+}
+
+.TopnavDiv {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  z-index: 99;
+  top: -4.75rem;
+}
+.TopnavDiv .partnerDiv {
+  background: rgba(255, 255, 255, 0.122);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(5px);
+  width: max-content;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 180px;
+}
+.TopnavDiv .partnerDiv img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .contentMainDiv {
-  margin-top: 6.5rem;
+  margin-top: 5.5rem;
   width: 100%;
   max-width: auto;
   margin-left: auto;
+}
+.contentMainDiv .nav {
+  background: transparent;
+  padding: 1rem 0;
 }
 .contentMainDiv .nav-item a {
   margin: 0 0.45rem;
@@ -179,11 +215,15 @@ body {
   background: #0A6ADA;
   color: #fff;
   border-radius: 8px;
+  z-index: 9999;
 }
 .contentMainDiv .tab-content {
   padding: 0rem;
   background: transparent;
   width: 100%;
+  position: sticky;
+  top: 7rem;
+  z-index: 9999;
 }
 .contentMainDiv .tab-content .tab-pane {
   width: 100%;
@@ -201,7 +241,7 @@ body {
 }
 .contentMainDiv .tab-content .customSelectBox ul {
   height: 88px;
-  width: 483px;
+  width: 350px;
   background: #EEF0F4;
   border-radius: 8px;
   display: flex;
@@ -391,7 +431,7 @@ body {
   color: #fff;
 }
 .contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon {
-  z-index: 999;
+  z-index: 9;
   position: relative;
 }
 .contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon img {
@@ -427,6 +467,10 @@ body {
   padding: 1rem;
   margin: 1rem;
   border-radius: 180px;
+}
+.contentMainDiv .bestOfferDiv .offerItem .iconDiv {
+  position: relative;
+  z-index: 1;
 }
 .contentMainDiv .bestOfferDiv .offerItem .iconDiv img {
   width: 50px;
@@ -482,6 +526,11 @@ body {
   border-radius: 6px;
   color: #fff;
   padding: 1rem 2 0.5rem;
+}
+
+.contentMainDivpl {
+  padding-left: 1rem;
+  width: 110%;
 }
 
 @media screen and (max-width: 768px) {
@@ -752,7 +801,7 @@ body {
     color: #fff;
   }
   .contentMainDiv .packageCard .cardImage .iconDetails .cardNameIcon {
-    z-index: 999;
+    z-index: 9;
     position: relative;
   }
   .contentMainDiv .packageCard .cardImage .iconDetails .cardNameIcon img {
@@ -770,6 +819,81 @@ body {
   .contentMainDiv .packageCard .cardImage .iconDetails .priceValue {
     font-size: 0.9em;
     font-weight: 400;
+  }
+  .contentMainDiv .bestOfferDiv {
+    padding: 0.25rem;
+    background: #fff;
+    border-radius: 14px;
+  }
+  .contentMainDiv .bestOfferDiv .h2 {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .contentMainDiv .bestOfferDiv p {
+    font-weight: 400;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem {
+    background: #ECEDF5;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem;
+    border-radius: 28px;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem .iconDiv img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem .textDiv h2 {
+    font-size: 0.9em;
+    font-weight: 700;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem .textDiv p {
+    font-weight: 400;
+    font-size: 0.8em;
+    color: #475073;
+  }
+
+  .perfectDeals {
+    background: linear-gradient(267.11deg, #FF7B71 9.04%, #FF4A3C 93.1%);
+    border-radius: 14px;
+    height: 25vh;
+    position: relative;
+  }
+  .perfectDeals img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    bottom: 0;
+    left: 0 !important;
+  }
+  .perfectDeals .textDiv {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .perfectDeals .boldPrice {
+    font-size: 2em;
+    font-weight: 700;
+    position: relative;
+    margin-top: -12px;
+    color: #FFC54D;
+    display: flex;
+    align-items: baseline;
+  }
+  .perfectDeals .boldPrice p {
+    font-weight: 300 !important;
+    font-size: 0.5em;
+    margin-top: -12px;
+  }
+  .perfectDeals .btnDiv {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+  }
+  .perfectDeals .btnDiv button {
+    background: #FF9189;
+    border-radius: 6px;
+    color: #fff;
+    padding: 1rem 2 0.5rem;
   }
 }
 
