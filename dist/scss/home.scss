@@ -1,10 +1,21 @@
+
+body{
+    background: #E5E5E5;
+
+}
 .sidebar {
     background: $theme-gradient1;
-    height: 90vh;
-    width: 15%;
+    // min-height: 90vh;
+    // width: 20%;
     // min-width: 200px;
     border-radius: 12px;
     transition: .10s;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    margin-top: 1rem;
+    overflow: visible;
+    // padding: 100% 0;
   
     // transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 
@@ -47,7 +58,7 @@
             padding: 0.75rem;
             color: $white;
             min-width: 200px;
-            margin: 0.4rem 0.9rem;
+            margin: 0.74rem 0.9rem;
             border-radius: 180px;
             text-align: center;
 
@@ -73,6 +84,10 @@
                 font-weight: 600;
             }
         }
+        .itemButton{
+            position: relative;
+            padding: 5rem 0rem;
+        }
 
         .bottomBgImage {
             position: absolute;
@@ -87,7 +102,16 @@
     }
    
 }
-
+.sticky {
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  @supports (position: sticky) or (position: -webkit-sticky) {
+    .some-sticky-element {
+      bottom: 30px;
+    }
+  }
 
 .sidebar-collapse {
     min-width: 66px;
@@ -146,7 +170,9 @@
 }
 .contentMainDiv{
     margin-top: 6.5rem;
-    width: 80%;
+    width: 100%;
+    max-width: auto;
+    margin-left: auto;
     .nav-item a{
         margin: 0 0.45rem;
         img{
@@ -168,11 +194,18 @@
     }
 
     .tab-content{
-        padding: 2rem;
-        background: $white;
-        width: 97%;
-        border-radius: 16px;
-        box-shadow: $box-shadow;
+        padding: 0rem;
+        background: transparent;
+        width: 100%;
+        // border-radius: 16px;
+        // box-shadow: $box-shadow;
+        .tab-pane{
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: $box-shadow;
+            background: $white;
+            padding: 2rem;
+        }
       // Custom selectBox ui li-------------------
         .labelSelectBox{
             position: absolute;
@@ -308,6 +341,13 @@
       
     }
     .tripPackage{
+        .h2{
+            font-size: 1em;
+            font-weight: 700;
+        }
+        p{
+            font-weight: 400;
+        }
 
         .packageCard{
             display: flex;
@@ -322,7 +362,7 @@
             .cardImage{
                 position: relative;
                 border-radius: 14px;
-                min-width: 250px;
+                min-width: 350px;
                 &:after{
                     content: "";
                     width: 100%;
@@ -333,6 +373,18 @@
                     background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
 
                 }
+                &:before{
+                    content: "";
+                    width: 100%;
+                    position: absolute;
+                    height: 240px;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 14px;
+                    transform: rotateX(177deg);
+                    background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+
+                }
               
 
                 img{
@@ -340,17 +392,7 @@
                     height: 240px;
                     object-fit: cover;
                     border-radius: 14px;
-                    &:after{
-                        content: "";
-                        width: 100%;
-                        position: absolute;
-                        height: 240px;
-                        bottom: 0;
-                        left: 0;
-                        border-bottom-left-radius: 14px;
-                        background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
-    
-                    }
+                  
 
                 }
                 .cardDetails{
@@ -370,30 +412,74 @@
                 }
                 .iconDetails{
                     position: absolute;
-                    bottom: 5px;
+                    bottom: -5px;
                     margin: 1rem;
                     color:$white;
+                  
                     .cardNameIcon{                        
-                        z-index: 9;
+                        z-index: 999;
+                        position: relative;
                         img{
                             object-fit: cover;
                             width: 40px;
                             height: 40px;
                             border-radius: 50%;
+                            border: 1px solid #98D3DD;
+                            backdrop-filter: blur(27.1828px);
+
+
                         }
+                    }
                         .nameCard{
                             font-size: 1em;
-                            font-weight: 500;
+                            font-weight: 700;
                         }
                         .priceValue{
                             font-size: 0.9em;
+                            font-weight: 400;
                         }
-                    }
+                    
                 }
                 
             }
         }
     }
+    .bestOfferDiv{
+        padding: 2rem;
+        background: $white;
+        border-radius: 14px;
+        .h2{
+            font-size: 1em;
+            font-weight: 700;
+        }
+        p{
+            font-weight: 400;
+        }
+        .offerItem{
+            background: #ECEDF5;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 180px;
+            .iconDiv{
+                img{
+                    width:50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+            }
+            .textDiv{
+                h2{
+                    font-size: 1em;
+                    font-weight: 700;
+                }
+                p{
+                    font-weight: 400;
+                    color: #475073;
+                }
+            }
+        }
+    }
+    
 
 
 }
@@ -402,7 +488,9 @@
     .sidebar{
         min-width: 66px;
         transition: .3s;
-    
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
     
         .logo {
             display: none;
@@ -443,8 +531,9 @@
     }
     .contentMainDiv{
         margin-top: 1.5rem;
-        width: 100%;
+        width: 75%;
         margin: 1rem;
+        margin-left: auto;
         .nav-item a{
             margin: 0 0.45rem;
             img{
@@ -463,15 +552,23 @@
             background: $theme-color;
             color:$white;
             border-radius: 8px;
+          
         }
     
         .tab-content{
-            padding: 1rem;
-            background: $white;
-            width: 92%;
-            margin: 0.75rem;
+            padding: 0.5rem;
+            background: transparent;
+            // width: 92%;
+            // margin: 0.75rem;
             border-radius: 16px;
-            box-shadow: $box-shadow;
+            // box-shadow: $box-shadow;
+            .tab-pane{
+                width: 100%;
+                border-radius: 16px;
+                box-shadow: $box-shadow;
+                background: $white;
+                padding: 1rem;
+            }
           // Custom selectBox ui li-------------------
             .labelSelectBox{
                 position: absolute;
@@ -609,31 +706,99 @@
           
         }
 
-        .tripPackage{
+        .packageCard{
+            display: flex;
+            overflow-x: scroll;
+            gap: 2rem;
+            width: 100%;
+            -ms-overflow-style: none; /* for Internet Explorer, Edge */
+            scrollbar-width: none; /* for Firefox */
+            &::-webkit-scrollbar{
+                display: none;
+            }
+            .cardImage{
+                position: relative;
+                border-radius: 14px;
+                min-width: 250px !important;
+                height: 200px !important;
 
-            .packageCard{
-                display: flex;
-                overflow-x: auto;
-                overflow: hidden;
-                gap: 2rem;
-                .cardImage{
-                    position: relative;
-                    img{
-                        width: 100%;
-                        height: 300px;
-                        object-fit: cover;
+                &:after{
+                    content: "";
+                    width: 100%;
+                    position: absolute;
+                    height: 200px !important;
+                    top: 0;
+                    border-top-left-radius: 14px;
+                    background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+
+                }
+                &:before{
+                    content: "";
+                    width: 100%;
+                    position: absolute;
+                    height: 200px !important;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 14px;
+                    transform: rotateX(177deg);
+                    background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+
+                }
+              
+
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 14px;
+                    height: 200px !important;
+
+                }
+                .cardDetails{
+                    position: absolute;
+                    top: 0;
+                    color:$white;
+                    margin: 1rem;
+                    z-index: 9;
+                    .priceTitle{
+                        font-size: 0.85em;
+                        text-transform: uppercase;
                     }
-                    .cardDetails{
-                        position: absolute;
-                        top: 0;
-                        .priceTitle{
-                            font-size: 0.85em;
-                        }
-                        .priceValue{
-                            font-size: 1.25em;
-                        }
+                    .priceValue{
+                        font-size: 1.25em;
+                        font-weight: 600;
                     }
                 }
+                .iconDetails{
+                    position: absolute;
+                    bottom: -5px;
+                    margin: 1rem;
+                    color:$white;
+                  
+                    .cardNameIcon{                        
+                        z-index: 999;
+                        position: relative;
+                        img{
+                            object-fit: cover;
+                            width: 40px !important;
+                            height: 40px !important;
+                            border-radius: 50%;
+                            border: 1px solid #98D3DD;
+                            backdrop-filter: blur(27.1828px);
+
+
+                        }
+                    }
+                        .nameCard{
+                            font-size: 1em;
+                            font-weight: 700;
+                        }
+                        .priceValue{
+                            font-size: 0.9em;
+                            font-weight: 400;
+                        }
+                    
+                }
+                
             }
         }
     
