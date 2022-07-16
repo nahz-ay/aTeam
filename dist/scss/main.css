@@ -19,6 +19,42 @@
     translate: scale(1);
   }
 }
+@keyframes rightAnim {
+  0% {
+    transform: translateX(-500px);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 1;
+    transform: scale(2);
+  }
+}
+@media screen and (max-width: 768px) {
+  @keyframes rightAnim {
+    0% {
+      transform: translateX(-500px);
+      opacity: 1;
+    }
+    30% {
+      opacity: 0.3;
+    }
+    70% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateX(100px);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
 body {
   background: #E5E5E5;
 }
@@ -101,17 +137,6 @@ body {
   height: auto;
 }
 
-.sticky {
-  position: relative;
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-@supports (position: sticky) or (position: -webkit-sticky) {
-  .some-sticky-element {
-    bottom: 30px;
-  }
-}
 .sidebar-collapse {
   min-width: 66px;
   transition: 0.3s;
@@ -151,6 +176,9 @@ body {
   background: linear-gradient(168.05deg, #023B96 5.04%, #022357 91.26%);
   z-index: 99;
   height: 33vh;
+}
+.bgBlueSky .planeObject {
+  animation: rightAnim 20s infinite;
 }
 .bgBlueSky .clouds {
   animation: left_right 20s infinite;
@@ -209,6 +237,12 @@ body {
   width: 100%;
   max-width: auto;
   margin-left: auto;
+}
+.contentMainDiv .box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: black;
 }
 .contentMainDiv .nav {
   background: transparent;
@@ -585,6 +619,72 @@ body {
     display: none;
   }
 
+  .bgBlueSky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(168.05deg, #023B96 5.04%, #022357 91.26%);
+    z-index: 99;
+    height: 15vh;
+  }
+  .bgBlueSky .planeObject {
+    width: 100px !important;
+    animation: rightAnim 20s infinite;
+  }
+  .bgBlueSky .clouds {
+    animation: left_right 20s infinite;
+  }
+  .bgBlueSky .clouds2 {
+    position: absolute;
+    left: 90%;
+    width: 200px;
+  }
+  .bgBlueSky .clouds4 {
+    position: absolute;
+    left: 50%;
+    width: 200px;
+  }
+  .bgBlueSky .clouds1 {
+    width: 550px;
+  }
+  .bgBlueSky .planeObject {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    left: 70%;
+    bottom: 29%;
+  }
+
+  .TopnavDiv {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    z-index: 99;
+    top: -4.75rem;
+  }
+  .TopnavDiv .partnerDiv {
+    display: none !important;
+    background: rgba(255, 255, 255, 0.122);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(5px);
+    width: max-content;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #fff;
+    padding: 0rem;
+    border-radius: 180px;
+    font-size: 0.7em;
+  }
+  .TopnavDiv .partnerDiv img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
   .contentMainDiv {
     margin-top: 1.5rem;
     width: 75%;
@@ -910,6 +1010,11 @@ body {
     border-radius: 6px;
     color: #fff;
     padding: 1rem 2 0.5rem;
+  }
+
+  .contentMainDivpl {
+    padding-left: 0rem;
+    width: auto;
   }
 }
 
