@@ -33,7 +33,7 @@
   100% {
     transform: translateX(100px);
     opacity: 1;
-    transform: scale(2);
+    transform: scale(1.3);
   }
 }
 @media screen and (max-width: 768px) {
@@ -1010,11 +1010,6 @@ body {
     border-radius: 6px;
     color: #fff;
     padding: 1rem 2 0.5rem;
-  }
-
-  .contentMainDivpl {
-    padding-left: 0rem;
-    width: auto;
   }
 }
 
