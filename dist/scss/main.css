@@ -97,7 +97,7 @@ body {
 .sidebar .menusDiv {
   margin-top: 2rem;
 }
-.sidebar .menusDiv .item {
+.sidebar .menusDiv .item, .sidebar .menusDiv .itemActive {
   padding: 0.75rem;
   color: #fff;
   min-width: 200px;
@@ -105,7 +105,7 @@ body {
   border-radius: 180px;
   text-align: center;
 }
-.sidebar .menusDiv .item a {
+.sidebar .menusDiv .item a, .sidebar .menusDiv .itemActive a {
   display: flex;
   font-size: 1em;
   font-weight: 500;
@@ -114,12 +114,17 @@ body {
   font-family: "Open Sans", sans-serif;
   letter-spacing: 1px;
 }
-.sidebar .menusDiv .item a img {
+.sidebar .menusDiv .item a img, .sidebar .menusDiv .itemActive a img {
   width: 18px;
   height: 18px;
 }
-.sidebar .menusDiv .item:hover,
-.sidebar .menusDiv .item :active {
+.sidebar .menusDiv .item:hover, .sidebar .menusDiv .itemActive:hover,
+.sidebar .menusDiv .item :active,
+.sidebar .menusDiv .itemActive :active {
+  background: #0076FF;
+  font-weight: 600;
+}
+.sidebar .menusDiv .itemActive {
   background: #0076FF;
   font-weight: 600;
 }
@@ -159,13 +164,13 @@ body {
 .sidebar-collapse .hamMenu div:nth-child(2) {
   width: 20px;
 }
-.sidebar-collapse .menusDiv .item {
+.sidebar-collapse .menusDiv .item, .sidebar-collapse .sidebar .menusDiv .itemActive, .sidebar .sidebar-collapse .menusDiv .itemActive {
   min-width: 42px;
 }
-.sidebar-collapse .menusDiv .item a {
+.sidebar-collapse .menusDiv .item a, .sidebar-collapse .sidebar .menusDiv .itemActive a, .sidebar .sidebar-collapse .menusDiv .itemActive a {
   gap: 2rem;
 }
-.sidebar-collapse .menusDiv .item a span {
+.sidebar-collapse .menusDiv .item a span, .sidebar-collapse .sidebar .menusDiv .itemActive a span, .sidebar .sidebar-collapse .menusDiv .itemActive a span {
   display: none;
 }
 
@@ -609,13 +614,13 @@ body {
   .sidebar .hamMenu div:nth-child(2) {
     width: 20px;
   }
-  .sidebar .menusDiv .item {
+  .sidebar .menusDiv .item, .sidebar .menusDiv .itemActive {
     min-width: 42px;
   }
-  .sidebar .menusDiv .item a {
+  .sidebar .menusDiv .item a, .sidebar .menusDiv .itemActive a {
     gap: 2rem;
   }
-  .sidebar .menusDiv .item a span {
+  .sidebar .menusDiv .item a span, .sidebar .menusDiv .itemActive a span {
     display: none;
   }
 

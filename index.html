@@ -55,8 +55,8 @@
                     <div></div>
                 </div>
             </div>
-            <div class="menusDiv">
-                <div class="item">
+            <div class="menusDiv ">
+                <div class="item itemActive" id="item">
                     <a>
                         <img src="assets/images/icons/home.png" alt="">
                         <span>Home</span>
@@ -702,10 +702,11 @@
 <script>
     $(document).ready(function () {
 
-        
-        // Init ScrollMagic Controller
-       
-
+        $('.item').on('click', function(){
+            // alert("213");
+        $('.item').removeClass('itemActive');
+        $(this).addClass('itemActive');
+        });
 
         // sidebar collaspe/expand -----------------
         $(".hamMenu").click(function () {
