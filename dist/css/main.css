@@ -5,26 +5,73 @@
     opacity: 0;
   }
   30% {
-    opacity: 0.3;
-  }
-  30% {
     opacity: 0.7;
   }
-  70% {
+  60% {
     opacity: 1;
   }
+  90% {
+    opacity: 0.7;
+  }
   100% {
-    transform: translateX(-80px);
-    opacity: 0.5;
+    transform: translateX(-300px);
+    opacity: 0;
     translate: scale(1);
   }
 }
+@keyframes rightAnim {
+  0% {
+    transform: translateX(-100px);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 768px) {
+  @keyframes rightAnim {
+    0% {
+      transform: translateX(-500px);
+      opacity: 1;
+    }
+    30% {
+      opacity: 0.3;
+    }
+    70% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateX(100px);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+body {
+  background: #E5E5E5;
+}
+
 .sidebar {
+  z-index: 99;
   background: linear-gradient(141.08deg, #0A69DA 32.24%, #0856C8 115.93%, #0231A5 164.9%);
-  height: 90vh;
-  width: 15%;
   border-radius: 12px;
   transition: 0.1s;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  margin-top: 1rem;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sidebar .logo {
   padding: 1.5rem;
@@ -54,10 +101,10 @@
   margin-top: 2rem;
 }
 .sidebar .menusDiv .item {
-  padding: 0.75rem;
+  padding: 0.85rem;
   color: #fff;
   min-width: 200px;
-  margin: 0.4rem 0.9rem;
+  margin: 0.74rem 0.9rem;
   border-radius: 180px;
   text-align: center;
 }
@@ -74,10 +121,48 @@
   width: 18px;
   height: 18px;
 }
-.sidebar .menusDiv .item:hover,
-.sidebar .menusDiv .item :active {
+.sidebar .menusDiv .item:hover {
+  background: #0076FF;
+}
+.sidebar .menusDiv .itemActive {
   background: #0076FF;
   font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
+}
+.sidebar .menusDiv .itemButton {
+  position: relative;
+  padding: 5rem 0;
+  width: 100%;
+  right: -2px;
+}
+.sidebar .menusDiv .itemButton button {
+  display: flex;
+  margin: 1rem;
+  gap: 1rem;
+  background: #F3F5FA;
+  padding: 0.5rem;
+  border-radius: 180px;
+  width: 85%;
+  align-items: center;
+}
+.sidebar .menusDiv .itemButton button .iconBG {
+  background: linear-gradient(214.51deg, #D10015 13.77%, #FF4369 83.58%);
+  border-radius: 50%;
+  padding: 0.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .menusDiv .itemButton button .iconBG img {
+  width: 25px;
+  height: 25px;
+}
+.sidebar .menusDiv .itemButton button .btnText {
+  font-weight: 700;
+  font-size: 1em;
 }
 .sidebar .menusDiv .bottomBgImage {
   position: absolute;
@@ -113,6 +198,23 @@
 }
 .sidebar-collapse .menusDiv .item {
   min-width: 42px;
+  display: flex;
+  justify-content: center;
+}
+.sidebar-collapse .menusDiv .item:hover a {
+  gap: 0.5rem;
+}
+.sidebar-collapse .menusDiv .item:hover a img {
+  z-index: 9;
+}
+.sidebar-collapse .menusDiv .item:hover a span {
+  position: absolute;
+  display: block;
+  min-width: fit-content;
+  background: #0076FF;
+  padding: 0.65rem 1.5rem;
+  border-top-right-radius: 180px;
+  border-bottom-right-radius: 180px;
 }
 .sidebar-collapse .menusDiv .item a {
   gap: 2rem;
@@ -120,23 +222,129 @@
 .sidebar-collapse .menusDiv .item a span {
   display: none;
 }
+.sidebar-collapse .menusDiv .itemActive {
+  background: #0076FF;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+.sidebar-collapse .itemButton {
+  position: relative;
+  padding: 5rem 0;
+  width: 100%;
+  right: -19px;
+}
+.sidebar-collapse .itemButton button {
+  display: flex;
+  margin: 1rem 0;
+  gap: 1rem;
+  background: #F3F5FA;
+  padding: 0.5rem;
+  border-radius: 180px;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  width: 82% !important;
+  align-items: center;
+}
+.sidebar-collapse .itemButton button .iconBG {
+  background: linear-gradient(214.51deg, #D10015 13.77%, #FF4369 83.58%);
+  border-radius: 50%;
+  text-align: center;
+  padding: 0.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.sidebar-collapse .itemButton button .iconBG img {
+  width: 25px;
+  height: 25px;
+}
+.sidebar-collapse .itemButton button .btnText {
+  font-weight: 700;
+  font-size: 1em;
+  display: none;
+}
 
 .bgBlueSky {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   background: linear-gradient(168.05deg, #023B96 5.04%, #022357 91.26%);
-  z-index: -1;
-  height: 30vh;
+  z-index: 99;
+  height: 43vh;
 }
-.bgBlueSky img {
-  width: 100%;
-  object-fit: contain;
+.bgBlueSky .planeObject {
+  animation: rightAnim 20s ease-in;
+  transform: scale(1);
+}
+.bgBlueSky .clouds {
+  animation: left_right 20s infinite;
+}
+.bgBlueSky .clouds2 {
+  position: absolute;
+  left: 90%;
+  width: 200px;
+}
+.bgBlueSky .clouds4 {
+  position: absolute;
+  left: 50%;
+  width: 200px;
+}
+.bgBlueSky .clouds1 {
+  width: 550px;
+}
+.bgBlueSky .planeObject {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 70%;
+  bottom: 29%;
+}
+
+.TopnavDiv {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  z-index: 99;
+  top: -4.75rem;
+}
+.TopnavDiv .partnerDiv {
+  background: rgba(255, 255, 255, 0.122);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(5px);
+  width: max-content;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 180px;
+}
+.TopnavDiv .partnerDiv img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .contentMainDiv {
-  margin-top: 6.5rem;
-  width: 80%;
+  margin-top: 5.5rem;
+  width: 80% !important;
+  max-width: auto;
+}
+@media screen and (min-width: 1500px) {
+  .contentMainDiv {
+    width: 100%;
+  }
+}
+.contentMainDiv .nav {
+  background: transparent;
+  padding: 1rem 0;
 }
 .contentMainDiv .nav-item a {
   margin: 0 0.45rem;
@@ -151,17 +359,33 @@
   color: #fff;
   border-radius: 8px;
 }
-.contentMainDiv .nav-tabs .nav-item.show .nav-link, .contentMainDiv .nav-tabs .nav-link.active {
+.contentMainDiv .nav-tabs .nav-item.show .nav-link,
+.contentMainDiv .nav-tabs .nav-link.active {
   background: #0A6ADA;
   color: #fff;
   border-radius: 8px;
+  z-index: 9999;
 }
 .contentMainDiv .tab-content {
-  padding: 2rem;
-  background: #fff;
-  width: 97%;
+  padding: 0rem;
+  background: transparent;
+  width: 100%;
+  position: sticky;
+  top: 7rem;
+  z-index: 99;
+}
+@media screen and (max-width: 768px) {
+  .contentMainDiv .tab-content {
+    position: relative;
+    top: 1rem;
+  }
+}
+.contentMainDiv .tab-content .tab-pane {
+  width: 100%;
   border-radius: 16px;
   box-shadow: 0px 10px 14px -3px rgba(0, 0, 0, 0.41);
+  background: #fff;
+  padding: 2rem;
 }
 .contentMainDiv .tab-content .labelSelectBox {
   position: absolute;
@@ -172,11 +396,16 @@
 }
 .contentMainDiv .tab-content .customSelectBox ul {
   height: 88px;
-  width: 483px;
+  width: 350px;
   background: #EEF0F4;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 1560px) {
+  .contentMainDiv .tab-content .customSelectBox ul {
+    width: 250px;
+  }
 }
 .contentMainDiv .tab-content .customSelectBox ul li {
   padding: 1.5rem 1rem;
@@ -212,6 +441,11 @@
   background: #0A6ADA;
   color: #fff;
 }
+@media screen and (max-width: 1560px) {
+  .contentMainDiv .tab-content .customDatePicker, .contentMainDiv .tab-content .customDropDown, .contentMainDiv .tab-content .customFormCheck {
+    width: 250px;
+  }
+}
 .contentMainDiv .tab-content .customDatePicker .labelSelectBox, .contentMainDiv .tab-content .customDropDown .labelSelectBox, .contentMainDiv .tab-content .customFormCheck .labelSelectBox {
   position: absolute;
   margin-top: 0rem;
@@ -231,13 +465,21 @@
   border: 0;
   border-radius: 8px;
 }
-.contentMainDiv .tab-content .customDatePicker .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control :focus-visible {
+.contentMainDiv .tab-content .customDatePicker .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control:focus,
+.contentMainDiv .tab-content .customDatePicker .form-floating > .form-control :focus-visible,
+.contentMainDiv .tab-content .customDropDown .form-floating > .form-control :focus-visible,
+.contentMainDiv .tab-content .customFormCheck .form-floating > .form-control :focus-visible {
   box-shadow: none;
   border: 0;
   outline: 0;
 }
 .contentMainDiv .tab-content .customDropDown, .contentMainDiv .tab-content .customFormCheck {
   margin-right: 1rem;
+}
+@media screen and (max-width: 1560px) {
+  .contentMainDiv .tab-content .customDropDown, .contentMainDiv .tab-content .customFormCheck {
+    width: 150px;
+  }
 }
 .contentMainDiv .tab-content .customDropDown .form-control, .contentMainDiv .tab-content .customFormCheck .form-control {
   font-size: 1em;
@@ -250,7 +492,9 @@
   border: 0;
   border-radius: 8px;
 }
-.contentMainDiv .tab-content .customDropDown .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-control :focus-visible {
+.contentMainDiv .tab-content .customDropDown .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-control:focus,
+.contentMainDiv .tab-content .customDropDown .form-control :focus-visible,
+.contentMainDiv .tab-content .customFormCheck .form-control :focus-visible {
   box-shadow: none;
   border: 0;
   outline: 0;
@@ -289,6 +533,13 @@
 .contentMainDiv .tab-content .btnDiv button:hover {
   background: #a60316;
 }
+.contentMainDiv .tripPackage .h2 {
+  font-size: 1em;
+  font-weight: 700;
+}
+.contentMainDiv .tripPackage p {
+  font-weight: 400;
+}
 .contentMainDiv .tripPackage .packageCard {
   display: flex;
   overflow-x: scroll;
@@ -305,7 +556,7 @@
 .contentMainDiv .tripPackage .packageCard .cardImage {
   position: relative;
   border-radius: 14px;
-  min-width: 250px;
+  min-width: 350px;
 }
 .contentMainDiv .tripPackage .packageCard .cardImage:after {
   content: "";
@@ -316,21 +567,22 @@
   border-top-left-radius: 14px;
   background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
 }
-.contentMainDiv .tripPackage .packageCard .cardImage img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 14px;
-}
-.contentMainDiv .tripPackage .packageCard .cardImage img:after {
+.contentMainDiv .tripPackage .packageCard .cardImage:before {
   content: "";
   width: 100%;
   position: absolute;
   height: 240px;
   bottom: 0;
   left: 0;
-  border-bottom-left-radius: 14px;
+  border-radius: 14px;
+  transform: rotateX(177deg);
   background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+}
+.contentMainDiv .tripPackage .packageCard .cardImage img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
 }
 .contentMainDiv .tripPackage .packageCard .cardImage .cardDetails {
   position: absolute;
@@ -349,52 +601,154 @@
 }
 .contentMainDiv .tripPackage .packageCard .cardImage .iconDetails {
   position: absolute;
-  bottom: 5px;
+  bottom: -5px;
   margin: 1rem;
   color: #fff;
 }
 .contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon {
   z-index: 9;
+  position: relative;
 }
 .contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon img {
   object-fit: cover;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 1px solid #98D3DD;
+  backdrop-filter: blur(27.1828px);
 }
-.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon .nameCard {
+.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .nameCard {
   font-size: 1em;
+  font-weight: 700;
+}
+.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .priceValue {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+.contentMainDiv .bestOfferDiv {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 14px;
+}
+.contentMainDiv .bestOfferDiv .h2 {
+  font-size: 1em;
+  font-weight: 700;
+}
+.contentMainDiv .bestOfferDiv p {
+  font-weight: 400;
+}
+.contentMainDiv .bestOfferDiv .offerItem {
+  background: #ECEDF5;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 180px;
+}
+.contentMainDiv .bestOfferDiv .offerItem .iconDiv {
+  position: relative;
+  z-index: 1;
+}
+.contentMainDiv .bestOfferDiv .offerItem .iconDiv img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.contentMainDiv .bestOfferDiv .offerItem .textDiv h2 {
+  font-size: 1em;
+  font-weight: 700;
+}
+.contentMainDiv .bestOfferDiv .offerItem .textDiv p {
+  font-weight: 400;
+  color: #475073;
+}
+.contentMainDiv .perfectDeals {
+  background: linear-gradient(267.11deg, #FF7B71 9.04%, #FF4A3C 93.1%);
+  border-radius: 14px;
+  height: 25vh;
+  position: relative;
+}
+.contentMainDiv .perfectDeals img {
+  position: absolute;
+  width: 550px;
+  height: auto;
+  bottom: 0;
+  left: 40%;
+}
+.contentMainDiv .perfectDeals .textDiv {
+  font-size: 1.75em;
   font-weight: 500;
 }
-.contentMainDiv .tripPackage .packageCard .cardImage .iconDetails .cardNameIcon .priceValue {
-  font-size: 0.9em;
+.contentMainDiv .perfectDeals .boldPrice {
+  font-size: 3.25em;
+  font-weight: 700;
+  position: relative;
+  margin-top: -12px;
+  color: #FFC54D;
+  display: flex;
+  align-items: baseline;
+}
+.contentMainDiv .perfectDeals .boldPrice p {
+  font-weight: 300 !important;
+  font-size: 0.5em;
+  margin-top: -12px;
+}
+.contentMainDiv .perfectDeals .btnDiv {
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+}
+.contentMainDiv .perfectDeals .btnDiv button {
+  background: #FF9189;
+  border-radius: 6px;
+  color: #fff;
+  padding: 1rem 2.5rem;
+}
+
+.contentMainDivpl {
+  padding-left: 1rem;
+  width: 100% !important;
+}
+@media screen and (min-width: 1300px) {
+  .contentMainDivpl {
+    width: 90% !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .sidebar {
     min-width: 66px;
     transition: 0.3s;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    margin-top: 0.5rem;
   }
   .sidebar .logo {
-    display: none;
+    display: block;
   }
   .sidebar .hamMenu {
     margin: 1.25rem;
-  }
-  .sidebar .hamMenu div {
-    width: 10px;
-    height: 4px;
-    margin: 0.2rem;
-    background: #fff;
-  }
-  .sidebar .hamMenu div:nth-child(1) {
-    width: 10px;
-  }
-  .sidebar .hamMenu div:nth-child(2) {
-    width: 20px;
+    display: none;
   }
   .sidebar .menusDiv .item {
     min-width: 42px;
+    padding: 1.5rem !important;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .sidebar .menusDiv .item:hover a {
+    gap: 0.25rem;
+  }
+  .sidebar .menusDiv .item:hover a img {
+    z-index: 9;
+  }
+  .sidebar .menusDiv .item:hover a span {
+    position: absolute;
+    display: block;
+    min-width: fit-content;
+    background: #0076FF;
+    padding: 1.25rem 1.5rem;
+    border-top-right-radius: 180px;
+    border-bottom-right-radius: 180px;
   }
   .sidebar .menusDiv .item a {
     gap: 2rem;
@@ -402,11 +756,126 @@
   .sidebar .menusDiv .item a span {
     display: none;
   }
+  .sidebar .menusDiv .itemActive {
+    background: #0076FF;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+  }
+  .sidebar .menusDiv .itemButton {
+    position: relative;
+    padding: 5rem 0;
+    width: 100%;
+    right: -19px;
+  }
+  .sidebar .menusDiv .itemButton button {
+    display: flex;
+    margin: 1rem 0;
+    gap: 1rem;
+    background: #F3F5FA;
+    padding: 0.5rem;
+    border-radius: 180px;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    width: 82% !important;
+    align-items: center;
+  }
+  .sidebar .menusDiv .itemButton button .iconBG {
+    background: linear-gradient(214.51deg, #D10015 13.77%, #FF4369 83.58%);
+    border-radius: 50%;
+    text-align: center;
+    padding: 0.25rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  .sidebar .menusDiv .itemButton button .iconBG img {
+    width: 25px;
+    height: 25px;
+  }
+  .sidebar .menusDiv .itemButton button .btnText {
+    font-weight: 700;
+    font-size: 1em;
+    display: none;
+  }
+
+  .bgBlueSky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(168.05deg, #023B96 5.04%, #022357 91.26%);
+    z-index: 99;
+    height: 11vh;
+  }
+  .bgBlueSky .planeObject {
+    width: 100px !important;
+    animation: rightAnim 20s infinite;
+  }
+  .bgBlueSky .clouds {
+    animation: left_right 20s infinite;
+  }
+  .bgBlueSky .clouds2 {
+    position: absolute;
+    left: 90%;
+    width: 200px;
+  }
+  .bgBlueSky .clouds4 {
+    position: absolute;
+    left: 50%;
+    width: 200px;
+  }
+  .bgBlueSky .clouds1 {
+    width: 550px;
+  }
+  .bgBlueSky .planeObject {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    left: 70%;
+    bottom: 29%;
+  }
+
+  .TopnavDiv {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    z-index: 99;
+    top: -4.75rem;
+  }
+  .TopnavDiv .partnerDiv {
+    display: none !important;
+    background: rgba(255, 255, 255, 0.122);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(5px);
+    width: max-content;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #fff;
+    padding: 0rem;
+    border-radius: 180px;
+    font-size: 0.7em;
+  }
+  .TopnavDiv .partnerDiv img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
 
   .contentMainDiv {
     margin-top: 1.5rem;
-    width: 100%;
+    width: 70% !important;
     margin: 1rem;
+    margin-left: auto;
+  }
+  .contentMainDiv nav {
+    padding: 0;
   }
   .contentMainDiv .nav-item a {
     margin: 0 0.45rem;
@@ -421,18 +890,24 @@
     color: #fff;
     border-radius: 8px;
   }
-  .contentMainDiv .nav-tabs .nav-item.show .nav-link, .contentMainDiv .nav-tabs .nav-link.active {
+  .contentMainDiv .nav-tabs .nav-item.show .nav-link,
+.contentMainDiv .nav-tabs .nav-link.active {
     background: #0A6ADA;
     color: #fff;
     border-radius: 8px;
   }
   .contentMainDiv .tab-content {
-    padding: 1rem;
-    background: #fff;
-    width: 92%;
-    margin: 0.75rem;
+    padding: 0.5rem;
+    background: transparent;
+    border-radius: 16px;
+    z-index: 1;
+  }
+  .contentMainDiv .tab-content .tab-pane {
+    width: 100%;
     border-radius: 16px;
     box-shadow: 0px 10px 14px -3px rgba(0, 0, 0, 0.41);
+    background: #fff;
+    padding: 1rem;
   }
   .contentMainDiv .tab-content .labelSelectBox {
     position: absolute;
@@ -444,14 +919,14 @@
   .contentMainDiv .tab-content .customSelectBox ul {
     height: 88px;
     width: 100%;
-    min-width: 234px;
+    min-width: 227px;
     background: #EEF0F4;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
   }
   .contentMainDiv .tab-content .customSelectBox ul li {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
     z-index: 99;
     display: flex;
     flex-direction: column;
@@ -503,13 +978,17 @@
     border: 0;
     border-radius: 8px;
   }
-  .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control :focus-visible {
+  .contentMainDiv .tab-content .customDatePicker .form-floating > .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-floating > .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-floating > .form-control:focus,
+.contentMainDiv .tab-content .customDatePicker .form-floating > .form-control :focus-visible,
+.contentMainDiv .tab-content .customDropDown .form-floating > .form-control :focus-visible,
+.contentMainDiv .tab-content .customFormCheck .form-floating > .form-control :focus-visible {
     box-shadow: none;
     border: 0;
     outline: 0;
   }
   .contentMainDiv .tab-content .customDropDown, .contentMainDiv .tab-content .customFormCheck {
     margin-right: 0rem;
+    min-width: 100%;
   }
   .contentMainDiv .tab-content .customDropDown .form-control, .contentMainDiv .tab-content .customFormCheck .form-control {
     font-size: 1em;
@@ -523,7 +1002,9 @@
     border-radius: 8px;
     width: 100%;
   }
-  .contentMainDiv .tab-content .customDropDown .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-control:focus, .contentMainDiv .tab-content .customDropDown .form-control :focus-visible, .contentMainDiv .tab-content .customFormCheck .form-control :focus-visible {
+  .contentMainDiv .tab-content .customDropDown .form-control:focus, .contentMainDiv .tab-content .customFormCheck .form-control:focus,
+.contentMainDiv .tab-content .customDropDown .form-control :focus-visible,
+.contentMainDiv .tab-content .customFormCheck .form-control :focus-visible {
     box-shadow: none;
     border: 0;
     outline: 0;
@@ -563,28 +1044,170 @@
   .contentMainDiv .tab-content .btnDiv button:hover {
     background: #a60316;
   }
-  .contentMainDiv .tripPackage .packageCard {
+  .contentMainDiv .packageCard {
     display: flex;
-    overflow-x: auto;
-    overflow: hidden;
+    overflow-x: scroll;
     gap: 2rem;
-  }
-  .contentMainDiv .tripPackage .packageCard .cardImage {
-    position: relative;
-  }
-  .contentMainDiv .tripPackage .packageCard .cardImage img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
   }
-  .contentMainDiv .tripPackage .packageCard .cardImage .cardDetails {
+  .contentMainDiv .packageCard::-webkit-scrollbar {
+    display: none;
+  }
+  .contentMainDiv .packageCard .cardImage {
+    position: relative;
+    border-radius: 14px;
+    min-width: 250px !important;
+    height: 200px !important;
+  }
+  .contentMainDiv .packageCard .cardImage:after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 200px !important;
+    top: 0;
+    border-top-left-radius: 14px;
+    background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+  }
+  .contentMainDiv .packageCard .cardImage:before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 200px !important;
+    bottom: 0;
+    left: 0;
+    border-radius: 14px;
+    transform: rotateX(177deg);
+    background: linear-gradient(151.79deg, rgba(16, 57, 37, 0.601262) 14.26%, rgba(0, 0, 0, 0.0001) 30.78%);
+  }
+  .contentMainDiv .packageCard .cardImage img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    height: 200px !important;
+  }
+  .contentMainDiv .packageCard .cardImage .cardDetails {
     position: absolute;
     top: 0;
+    color: #fff;
+    margin: 1rem;
+    z-index: 9;
   }
-  .contentMainDiv .tripPackage .packageCard .cardImage .cardDetails .priceTitle {
+  .contentMainDiv .packageCard .cardImage .cardDetails .priceTitle {
     font-size: 0.85em;
+    text-transform: uppercase;
   }
-  .contentMainDiv .tripPackage .packageCard .cardImage .cardDetails .priceValue {
+  .contentMainDiv .packageCard .cardImage .cardDetails .priceValue {
     font-size: 1.25em;
+    font-weight: 600;
+  }
+  .contentMainDiv .packageCard .cardImage .iconDetails {
+    position: absolute;
+    bottom: -5px;
+    margin: 1rem;
+    color: #fff;
+  }
+  .contentMainDiv .packageCard .cardImage .iconDetails .cardNameIcon {
+    z-index: 9;
+    position: relative;
+  }
+  .contentMainDiv .packageCard .cardImage .iconDetails .cardNameIcon img {
+    object-fit: cover;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    border: 1px solid #98D3DD;
+    backdrop-filter: blur(27.1828px);
+  }
+  .contentMainDiv .packageCard .cardImage .iconDetails .nameCard {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .contentMainDiv .packageCard .cardImage .iconDetails .priceValue {
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+  .contentMainDiv .bestOfferDiv {
+    padding: 0.25rem;
+    background: #fff;
+    border-radius: 14px;
+  }
+  .contentMainDiv .bestOfferDiv .h2 {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .contentMainDiv .bestOfferDiv p {
+    font-weight: 400;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem {
+    background: #ECEDF5;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem;
+    border-radius: 28px;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem .iconDiv img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem .textDiv h2 {
+    font-size: 0.9em;
+    font-weight: 700;
+  }
+  .contentMainDiv .bestOfferDiv .offerItem .textDiv p {
+    font-weight: 400;
+    font-size: 0.8em;
+    color: #475073;
+  }
+
+  .contentMainDivpl {
+    padding-left: 0;
+  }
+
+  .perfectDeals {
+    background: linear-gradient(267.11deg, #FF7B71 9.04%, #FF4A3C 93.1%);
+    border-radius: 14px;
+    height: 25vh;
+    position: relative;
+  }
+  .perfectDeals img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    bottom: 0;
+    left: 0 !important;
+  }
+  .perfectDeals .textDiv {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .perfectDeals .boldPrice {
+    font-size: 2em;
+    font-weight: 700;
+    position: relative;
+    margin-top: -12px;
+    color: #FFC54D;
+    display: flex;
+    align-items: baseline;
+  }
+  .perfectDeals .boldPrice p {
+    font-weight: 300 !important;
+    font-size: 0.5em;
+    margin-top: -12px;
+  }
+  .perfectDeals .btnDiv {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+  }
+  .perfectDeals .btnDiv button {
+    background: #FF9189;
+    border-radius: 6px;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1em;
   }
 }
