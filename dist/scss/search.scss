@@ -176,21 +176,35 @@
                     .ratingMark{
                         position: absolute;
                         background: #012257;
-                        width: 40px;
-                        height: 40px;
+                        width: 47px;
+                        height: 53px;
                         border-radius: 6px;
                         right: 0;
-                        top: 20px;
+                        top: 22px;
+                        p{
+                            z-index: 99;
+                            position: absolute;
+                            top: 7px;
+                            left: 8px;                        }
+                        span{
+                            position: absolute;
+                            background: #012257;
+                            width: 45px;
+                            height: 36px;
+                            border-radius: 6px;
+                            right: 10px;
+                            top: 0px;                       }
                         &:after{
                             content: "";
-    position: inherit;
-    width: 48px;
-    left: -1px;
-    top: 36px;
-    height: 18px;
-    background: #eee;
-    border-top-right-radius: 84px;
+                            position: inherit;
+                            width: 48px;
+                            left: -1px;
+                            top: 36px;
+                            height: 18px;
+                            background: #fff;
+                            border-top-right-radius: 84px;
                         }
+                     
                     }
 
                     .imgDiv {

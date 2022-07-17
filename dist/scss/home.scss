@@ -1137,7 +1137,7 @@ body {
             }
 
             .customDropDown {
-                @extend .customDatePicker;
+                // @extend .customDatePicker;
                 margin-right: 0rem;
                 min-width: 100%;
 
@@ -1160,7 +1160,7 @@ body {
 
             .customFormCheck {
                 width: 100%;
-                @extend .customDropDown;
+                // @extend .customDropDown;
                 display: flex;
                 align-items: center;
 

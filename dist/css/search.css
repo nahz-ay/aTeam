@@ -1,0 +1,117 @@
+.searchPage .bgBlueSky {
+  height: 22vh;
+}
+.searchPage .contentMainDiv {
+  margin-top: 1rem;
+}
+.searchPage .contentMainDiv .tab-pane {
+  position: sticky;
+  top: 2rem;
+  z-index: 99;
+  padding: 0.5rem !important;
+}
+.searchPage .contentMainDiv .tab-pane .labelSelectBox {
+  position: relative;
+  margin-top: 6px;
+  padding: 0 1rem;
+}
+.searchPage .contentMainDiv .tab-pane .customSelectBox .form-control {
+  height: 49px;
+  background: #EEF0F4 !important;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 0.25rem;
+  min-width: 170px;
+  width: 100%;
+}
+.searchPage .contentMainDiv .tab-pane .customSelectBox .form-control:focus,
+.searchPage .contentMainDiv .tab-pane .customSelectBox .form-control :focus-visible {
+  box-shadow: none;
+  border: 0;
+  outline: 0;
+}
+.searchPage .contentMainDiv .tab-pane .customSelectBox .form-control .optionSelect {
+  height: 49px;
+  background: #EEF0F4 !important;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 0.25rem;
+}
+.searchPage .contentMainDiv .tab-pane .customSelectBox ul {
+  height: 49px;
+  margin: 0.45rem 0;
+  min-width: 150px !important;
+}
+.searchPage .contentMainDiv .tab-pane .customSelectBox ul li {
+  padding: 0.75rem;
+}
+.searchPage .contentMainDiv .tab-pane .customDatePicker .form-floating > .form-control {
+  background: #EEF0F4 !important;
+  height: 49px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 0.25rem;
+}
+.searchPage .contentMainDiv .tab-pane .customDatePicker .form-floating > .form-control:focus,
+.searchPage .contentMainDiv .tab-pane .customDatePicker .form-floating > .form-control :focus-visible {
+  box-shadow: none;
+  border: 0;
+  outline: 0;
+}
+.searchPage .contentMainDiv .tab-pane .customDropDown input {
+  height: 49px !important;
+}
+.searchPage .contentMainDiv .tab-pane .btnDiv {
+  margin: 1rem;
+  float: left !important;
+}
+.searchPage .contentMainDiv .tab-pane .btnDiv button {
+  height: 49px;
+  padding: 0.95rem;
+  font-size: 0.75rem;
+  border-radius: 180px;
+}
+.searchPage .contentMainDiv .contentContainer {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent {
+  padding: 1rem;
+  width: 100%;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead {
+  padding: 0.5rem;
+  color: #000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead .head {
+  font-size: 1em;
+  font-weight: 700;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead .head:after {
+  content: "";
+  width: 2px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.275);
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead p {
+  font-size: 0.85em;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead p span {
+  font-size: 0.8em;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead .buttonsGrup {
+  display: flex;
+  gap: 0.5rem;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead .buttonsGrup button {
+  padding: 8px 13px;
+}
+.searchPage .contentMainDiv .contentContainer .cardContent .contentHead .buttonsGrup button:hover, .searchPage .contentMainDiv .contentContainer .cardContent .contentHead .buttonsGrup button .active {
+  background: #163668;
+  border-radius: 16px;
+}
