@@ -789,6 +789,18 @@ body {
     width: 65% !important;
     align-items: center;
   }
+  .sidebar .menusDiv .itemButton button:hover .btnText {
+    display: block;
+    position: absolute;
+    width: 75px;
+    padding: 0.75rem 0;
+    background: #F3F5FA;
+    border-radius: 180px;
+    font-size: 0.7em;
+    margin-left: 2rem;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
   .sidebar .menusDiv .itemButton button .iconBG {
     background: linear-gradient(214.51deg, #D10015 13.77%, #FF4369 83.58%);
     border-radius: 50%;
