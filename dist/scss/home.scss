@@ -5,7 +5,7 @@ body {
 
 
 .sidebar {
-    z-index: 99;
+    z-index: 9999;
     background: $theme-gradient1;
     // min-height: 90vh;
     // width: 20%;
@@ -58,7 +58,7 @@ body {
     }
 
     .menusDiv {
-        margin-top: 2rem;
+        margin-top: 5rem;
 
         .item {
             padding: 0.85rem;
@@ -82,6 +82,7 @@ body {
                     width: 18px;
                     height: 18px;
                 }
+
             }
 
             &:hover {
@@ -185,6 +186,7 @@ body {
             min-width: 42px;
             display: flex;
             justify-content: center;
+
             &:hover {
 
 
@@ -193,14 +195,15 @@ body {
                         z-index: 9;
                     }
 
-                    gap: 0.5rem;
+                    gap: 1rem;
 
                     span {
                         position: absolute;
                         display: block;
                         min-width: fit-content;
                         background: #0076FF;
-                        padding: 0.65rem 1.5rem;
+                        padding: .7rem 1rem;
+                        margin-left: .2rem;
                         border-top-right-radius: 180px;
                         border-bottom-right-radius: 180px;
 
@@ -229,9 +232,10 @@ body {
 
     .itemButton {
         position: relative;
-        padding: 5rem 0;
+        padding: .5rem 0;
         width: 100%;
         right: -19px;
+
 
         button {
             display: flex;
@@ -244,6 +248,25 @@ body {
             border-bottom-right-radius: 0 !important;
             width: 82% !important;
             align-items: center;
+
+            &:hover {
+
+                // position: absolute;
+                //  width: 220px !important;
+                // border-radius: 180px !important;
+                .btnText {
+                    display: block;
+                    position: absolute;
+                    width: 120px;
+                    padding: 1rem 0;
+                    background: #F3F5FA;
+                    border-radius: 180px;
+                    margin-left: 3rem;
+                    
+                }
+
+
+            }
 
             .iconBG {
                 background: linear-gradient(214.51deg, #D10015 13.77%, #FF4369 83.58%);
@@ -474,9 +497,7 @@ body {
         }
 
         .customDatePicker {
-            @media screen and (max-width:1560px) {
-                width: 250px
-            }
+
 
             .labelSelectBox {
                 position: absolute;
@@ -808,16 +829,20 @@ body {
 
 @media screen and (max-width:768px) {
     .sidebar {
-        min-width: 66px;
+        // min-width: 66px;
+        width: 49px !important;
         transition: .3s;
         min-height: 100vh;
         position: fixed;
         top: 0;
         z-index: 9999;
         margin-top: 0.5rem;
+        margin: 0.2rem;
 
         .logo {
             display: block;
+            padding: 0.75rem 0.4rem;
+            margin: 0.5rem 0;
         }
 
         .hamMenu {
@@ -828,7 +853,8 @@ body {
         .menusDiv {
             .item {
                 min-width: 42px;
-                padding: 1.5rem !important;
+                padding: .5rem !important;
+                margin: 2rem .75rem;
                 transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
                 &:hover {
@@ -839,14 +865,14 @@ body {
                             z-index: 9;
                         }
 
-                        gap: 0.25rem;
+                        gap: 1rem;
 
                         span {
                             position: absolute;
                             display: block;
                             min-width: fit-content;
                             background: #0076FF;
-                            padding: 1.25rem 1.5rem;
+                            padding: 0.25rem 1.5rem;
                             border-top-right-radius: 180px;
                             border-bottom-right-radius: 180px;
 
@@ -876,18 +902,18 @@ body {
                 position: relative;
                 padding: 5rem 0;
                 width: 100%;
-                right: -19px;
+                right: -15px;
 
                 button {
                     display: flex;
                     margin: 1rem 0;
                     gap: 1rem;
                     background: #F3F5FA;
-                    padding: .5rem;
+                    padding: 0.35rem;
                     border-radius: 180px;
                     border-top-right-radius: 0 !important;
                     border-bottom-right-radius: 0 !important;
-                    width: 82% !important;
+                    width: 65% !important;
                     align-items: center;
 
                     .iconBG {
@@ -895,16 +921,16 @@ body {
                         border-radius: 50%;
                         text-align: center;
                         padding: 0.25rem;
-                        width: 40px;
-                        height: 40px;
+                        width: 30px;
+                        height: 30px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         align-self: center;
 
                         img {
-                            width: 25px;
-                            height: 25px;
+                            width: 15px;
+                            height: 15px;
                         }
                     }
 
@@ -997,7 +1023,7 @@ body {
 
     .contentMainDiv {
         margin-top: 1.5rem;
-        width: 70% !important;
+        width: 80% !important;
         margin: 1rem;
         margin-left: auto;
 
@@ -1056,10 +1082,12 @@ body {
             }
 
             .customSelectBox {
+                min-width: 100%;
+
                 ul {
                     height: 88px;
                     width: 100%;
-                    min-width: 227px;
+                    min-width: 100%;
                     background: #EEF0F4;
                     border-radius: 8px;
                     display: flex;
@@ -1070,7 +1098,7 @@ body {
                         z-index: 99;
                         display: flex;
                         flex-direction: column;
-                        width: 100%;
+                        min-width: 100%;
 
                         .mainOption {
                             @include textInput;
@@ -1377,12 +1405,12 @@ body {
         }
 
         .textDiv {
-            font-size: 1em;
+            font-size: 1.2em !important;
             font-weight: 500;
         }
 
         .boldPrice {
-            font-size: 2em;
+            font-size: 2em !important;
             font-weight: 700;
             position: relative;
             margin-top: -12px;
@@ -1400,14 +1428,14 @@ body {
 
         .btnDiv {
             position: absolute;
-            right: 4rem;
-            bottom: 4rem;
+            right: 0.3rem !important;
+            bottom: 1rem !important;
 
             button {
                 background: #FF9189;
                 border-radius: 6px;
                 color: $white;
-                padding: 1rem;
+                padding: 0.5rem;
                 font-size: 1em;
             }
         }

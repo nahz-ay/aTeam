@@ -60,7 +60,7 @@ body {
 }
 
 .sidebar {
-  z-index: 99;
+  z-index: 9999;
   background: linear-gradient(141.08deg, #0A69DA 32.24%, #0856C8 115.93%, #0231A5 164.9%);
   border-radius: 12px;
   transition: 0.1s;
@@ -98,7 +98,7 @@ body {
   width: 14px;
 }
 .sidebar .menusDiv {
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 .sidebar .menusDiv .item {
   padding: 0.85rem;
@@ -202,7 +202,7 @@ body {
   justify-content: center;
 }
 .sidebar-collapse .menusDiv .item:hover a {
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .sidebar-collapse .menusDiv .item:hover a img {
   z-index: 9;
@@ -212,7 +212,8 @@ body {
   display: block;
   min-width: fit-content;
   background: #0076FF;
-  padding: 0.65rem 1.5rem;
+  padding: 0.7rem 1rem;
+  margin-left: 0.2rem;
   border-top-right-radius: 180px;
   border-bottom-right-radius: 180px;
 }
@@ -230,7 +231,7 @@ body {
 }
 .sidebar-collapse .itemButton {
   position: relative;
-  padding: 5rem 0;
+  padding: 0.5rem 0;
   width: 100%;
   right: -19px;
 }
@@ -245,6 +246,15 @@ body {
   border-bottom-right-radius: 0 !important;
   width: 82% !important;
   align-items: center;
+}
+.sidebar-collapse .itemButton button:hover .btnText {
+  display: block;
+  position: absolute;
+  width: 120px;
+  padding: 1rem 0;
+  background: #F3F5FA;
+  border-radius: 180px;
+  margin-left: 3rem;
 }
 .sidebar-collapse .itemButton button .iconBG {
   background: linear-gradient(214.51deg, #D10015 13.77%, #FF4369 83.58%);
@@ -440,11 +450,6 @@ body {
 .contentMainDiv .tab-content .customSelectBox ul li .selectedOption:not(.init):hover {
   background: #0A6ADA;
   color: #fff;
-}
-@media screen and (max-width: 1560px) {
-  .contentMainDiv .tab-content .customDatePicker, .contentMainDiv .tab-content .customDropDown, .contentMainDiv .tab-content .customFormCheck {
-    width: 250px;
-  }
 }
 .contentMainDiv .tab-content .customDatePicker .labelSelectBox, .contentMainDiv .tab-content .customDropDown .labelSelectBox, .contentMainDiv .tab-content .customFormCheck .labelSelectBox {
   position: absolute;
@@ -715,16 +720,19 @@ body {
 
 @media screen and (max-width: 768px) {
   .sidebar {
-    min-width: 66px;
+    width: 49px !important;
     transition: 0.3s;
     min-height: 100vh;
     position: fixed;
     top: 0;
     z-index: 9999;
     margin-top: 0.5rem;
+    margin: 0.2rem;
   }
   .sidebar .logo {
     display: block;
+    padding: 0.75rem 0.4rem;
+    margin: 0.5rem 0;
   }
   .sidebar .hamMenu {
     margin: 1.25rem;
@@ -732,11 +740,12 @@ body {
   }
   .sidebar .menusDiv .item {
     min-width: 42px;
-    padding: 1.5rem !important;
+    padding: 0.5rem !important;
+    margin: 2rem 0.75rem;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .sidebar .menusDiv .item:hover a {
-    gap: 0.25rem;
+    gap: 1rem;
   }
   .sidebar .menusDiv .item:hover a img {
     z-index: 9;
@@ -746,7 +755,7 @@ body {
     display: block;
     min-width: fit-content;
     background: #0076FF;
-    padding: 1.25rem 1.5rem;
+    padding: 0.25rem 1.5rem;
     border-top-right-radius: 180px;
     border-bottom-right-radius: 180px;
   }
@@ -766,18 +775,18 @@ body {
     position: relative;
     padding: 5rem 0;
     width: 100%;
-    right: -19px;
+    right: -15px;
   }
   .sidebar .menusDiv .itemButton button {
     display: flex;
     margin: 1rem 0;
     gap: 1rem;
     background: #F3F5FA;
-    padding: 0.5rem;
+    padding: 0.35rem;
     border-radius: 180px;
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
-    width: 82% !important;
+    width: 65% !important;
     align-items: center;
   }
   .sidebar .menusDiv .itemButton button .iconBG {
@@ -785,16 +794,16 @@ body {
     border-radius: 50%;
     text-align: center;
     padding: 0.25rem;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
   }
   .sidebar .menusDiv .itemButton button .iconBG img {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
   }
   .sidebar .menusDiv .itemButton button .btnText {
     font-weight: 700;
@@ -870,7 +879,7 @@ body {
 
   .contentMainDiv {
     margin-top: 1.5rem;
-    width: 70% !important;
+    width: 80% !important;
     margin: 1rem;
     margin-left: auto;
   }
@@ -916,10 +925,13 @@ body {
     font-size: 0.85em;
     padding: 0.75rem 1rem;
   }
+  .contentMainDiv .tab-content .customSelectBox {
+    min-width: 100%;
+  }
   .contentMainDiv .tab-content .customSelectBox ul {
     height: 88px;
     width: 100%;
-    min-width: 227px;
+    min-width: 100%;
     background: #EEF0F4;
     border-radius: 8px;
     display: flex;
@@ -930,7 +942,7 @@ body {
     z-index: 99;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width: 100%;
   }
   .contentMainDiv .tab-content .customSelectBox ul li .mainOption {
     font-size: 1em;
@@ -1181,11 +1193,11 @@ body {
     left: 0 !important;
   }
   .perfectDeals .textDiv {
-    font-size: 1em;
+    font-size: 1.2em !important;
     font-weight: 500;
   }
   .perfectDeals .boldPrice {
-    font-size: 2em;
+    font-size: 2em !important;
     font-weight: 700;
     position: relative;
     margin-top: -12px;
@@ -1200,14 +1212,14 @@ body {
   }
   .perfectDeals .btnDiv {
     position: absolute;
-    right: 4rem;
-    bottom: 4rem;
+    right: 0.3rem !important;
+    bottom: 1rem !important;
   }
   .perfectDeals .btnDiv button {
     background: #FF9189;
     border-radius: 6px;
     color: #fff;
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: 1em;
   }
 }
@@ -1368,7 +1380,7 @@ body {
   top: 22px;
 }
 .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .ratingMark p {
-  z-index: 99;
+  z-index: 9;
   position: absolute;
   top: 7px;
   left: 8px;
@@ -1401,6 +1413,7 @@ body {
 .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv {
   color: #000;
   padding: 1.5rem;
+  width: 70%;
 }
 .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .name {
   font-size: 1em;
@@ -1476,11 +1489,305 @@ body {
 }
 .searchPage .contentMainDiv .contentContainer .filterCard .filtercardBody {
   margin-top: 0.2rem;
-  height: 50vh;
+  height: 100vh;
   width: 100%;
   background: white;
   border-radius: 6px;
 }
 .searchPage .contentMainDiv .contentContainer .filterCard .filtercardBody .priceRange {
   padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .searchPage .bgBlueSky {
+    height: 12vh;
+  }
+  .searchPage .contentMainDiv {
+    margin-top: 1rem;
+  }
+  .searchPage .contentMainDiv .tab-pane {
+    position: sticky;
+    top: 2rem;
+    z-index: 99;
+    padding: 0.5rem !important;
+  }
+  .searchPage .contentMainDiv .tab-pane .labelSelectBox {
+    position: relative;
+    margin-top: 6px;
+    padding: 0 1rem;
+  }
+  .searchPage .contentMainDiv .tab-pane .customSelectBox .form-control {
+    height: 49px;
+    background: #EEF0F4 !important;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 0.25rem;
+    min-width: 170px;
+    width: 100%;
+  }
+  .searchPage .contentMainDiv .tab-pane .customSelectBox .form-control:focus,
+.searchPage .contentMainDiv .tab-pane .customSelectBox .form-control :focus-visible {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+  }
+  .searchPage .contentMainDiv .tab-pane .customSelectBox .form-control .optionSelect {
+    height: 49px;
+    background: #EEF0F4 !important;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 0.25rem;
+  }
+  .searchPage .contentMainDiv .tab-pane .customSelectBox ul {
+    height: 49px;
+    margin: 0.45rem 0;
+    min-width: 150px !important;
+  }
+  .searchPage .contentMainDiv .tab-pane .customSelectBox ul li {
+    padding: 0.75rem;
+  }
+  .searchPage .contentMainDiv .tab-pane .customDatePicker .form-floating > .form-control, .searchPage .contentMainDiv .tab-pane .tab-content .customDropDown .form-floating > .form-control, .searchPage .contentMainDiv .tab-content .tab-pane .customDropDown .form-floating > .form-control, .searchPage .contentMainDiv .tab-pane .tab-content .customFormCheck .form-floating > .form-control, .searchPage .contentMainDiv .tab-content .tab-pane .customFormCheck .form-floating > .form-control {
+    background: #EEF0F4 !important;
+    height: 49px;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 0.25rem;
+  }
+  .searchPage .contentMainDiv .tab-pane .customDatePicker .form-floating > .form-control:focus, .searchPage .contentMainDiv .tab-pane .tab-content .customDropDown .form-floating > .form-control:focus, .searchPage .contentMainDiv .tab-content .tab-pane .customDropDown .form-floating > .form-control:focus, .searchPage .contentMainDiv .tab-pane .tab-content .customFormCheck .form-floating > .form-control:focus, .searchPage .contentMainDiv .tab-content .tab-pane .customFormCheck .form-floating > .form-control:focus,
+.searchPage .contentMainDiv .tab-pane .customDatePicker .form-floating > .form-control :focus-visible,
+.searchPage .contentMainDiv .tab-pane .tab-content .customDropDown .form-floating > .form-control :focus-visible,
+.searchPage .contentMainDiv .tab-content .tab-pane .customDropDown .form-floating > .form-control :focus-visible,
+.searchPage .contentMainDiv .tab-pane .tab-content .customFormCheck .form-floating > .form-control :focus-visible,
+.searchPage .contentMainDiv .tab-content .tab-pane .customFormCheck .form-floating > .form-control :focus-visible {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+  }
+  .searchPage .contentMainDiv .tab-pane .customDropDown input, .searchPage .contentMainDiv .tab-pane .tab-content .customFormCheck input, .searchPage .contentMainDiv .tab-content .tab-pane .customFormCheck input {
+    height: 49px !important;
+  }
+  .searchPage .contentMainDiv .tab-pane .btnDiv {
+    margin: 1rem;
+    float: left !important;
+  }
+  .searchPage .contentMainDiv .tab-pane .btnDiv button {
+    height: 49px;
+    padding: 0.95rem;
+    font-size: 0.75rem;
+    border-radius: 180px;
+  }
+  .searchPage .contentMainDiv .contentContainer {
+    display: flex;
+    gap: 0rem;
+    width: 100%;
+    flex-direction: column !important;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv {
+    padding: 1rem;
+    width: 100%;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead {
+    padding: 0.5rem;
+    color: #000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead .head {
+    font-size: 0.8em;
+    font-weight: 700;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead .head:after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.275);
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead p {
+    font-size: 0.8em;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead p span {
+    font-size: 0.8em;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead .buttonsGrup {
+    display: flex;
+    gap: 0.1rem;
+    flex-wrap: wrap;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead .buttonsGrup button {
+    padding: 0.25rem;
+    transition: 0.3s;
+    font-size: 0.8em;
+    color: #818393;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead .buttonsGrup button:hover,
+.searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead .buttonsGrup button .active {
+    background: #163668;
+    border-radius: 16px;
+    color: #fff;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentHead .buttonsGrup button:last-child {
+    background: transparent;
+    color: #0A6ADA;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard {
+    position: relative;
+    display: flex;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    border-radius: 6px;
+    color: #fff;
+    margin-bottom: 0.7rem;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .ratingMark {
+    position: absolute;
+    background: #012257;
+    width: 47px;
+    height: 53px;
+    border-radius: 6px;
+    right: 0;
+    top: 22px;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .ratingMark p {
+    z-index: 9;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .ratingMark span {
+    position: absolute;
+    background: #012257;
+    width: 45px;
+    height: 36px;
+    border-radius: 6px;
+    right: 10px;
+    top: 0px;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .ratingMark:after {
+    content: "";
+    position: inherit;
+    width: 48px;
+    left: -1px;
+    top: 36px;
+    height: 18px;
+    background: #fff;
+    border-top-right-radius: 84px;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .imgDiv img {
+    width: 70%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px 0px 0px 6px;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv {
+    color: #000;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .name {
+    font-size: 1em;
+    font-weight: 600;
+    color: #33344F;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .nearBy {
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .mapBtn {
+    color: #DF142D;
+    font-size: 0.8em;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .facilities {
+    display: flex;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .facilities .itemOne {
+    margin: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #A3A6AA;
+    font-size: 0.85em;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .facilities .itemOne img {
+    width: 10px;
+    height: auto;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .priceDetails h3 {
+    font-weight: 800;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0.3rem;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .cardBtns {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .cardBtns button {
+    padding: 0.5rem 0.74rem;
+    font-size: 0.8em;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: rgba(124, 130, 155, 0.1);
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .cardBtns button:last-child {
+    background: #0A6ADA;
+    color: #fff;
+  }
+  .searchPage .contentMainDiv .contentContainer .cardContentMainDiv .contentBody .placeDetailCard .detailsDiv .cardBtns button:hover {
+    outline: 1px solid #0A6ADA;
+  }
+  .searchPage .contentMainDiv .contentContainer .filterCard {
+    order: 1;
+    width: 100%;
+    padding: 1rem;
+    display: none;
+  }
+  .searchPage .contentMainDiv .contentContainer .filterCard .filterHead {
+    color: #000;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: none;
+  }
+  .searchPage .contentMainDiv .contentContainer .filterCard .filtercardBody {
+    display: none;
+    margin-top: 0.2rem;
+    height: 10vh;
+    width: 100%;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    overflow-x: auto;
+  }
+  .searchPage .contentMainDiv .contentContainer .filterCard .filtercardBody .priceRange {
+    padding: 1rem;
+  }
+  .searchPage .contentMainDiv .contentContainer .filterCard .filtercardBody .priceRange label {
+    width: max-content;
+  }
 }

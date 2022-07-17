@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 
-    <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="stylesheet" href="dist/css/main.css">
     <script>
         tailwind.config = {
             theme: {
@@ -32,10 +32,10 @@
 
         <div class="bgBlueSky">
             <div class="flex">
-                <img src="/assets/images/plane.png" class="planeObject" alt="">
-                <img src="/assets/images/cloudbottom.png" class="clouds" alt="">
-                <img src="/assets/images/cloudbottom.png" class="clouds clouds1" alt="">
-                <img src="/assets/images/cloudbottom.png" class="clouds clouds2" alt="">
+                <img src="assets/images/plane.png" class="planeObject" alt="">
+                <img src="assets/images/cloudbottom.png" class="clouds" alt="">
+                <img src="assets/images/cloudbottom.png" class="clouds clouds1" alt="">
+                <img src="assets/images/cloudbottom.png" class="clouds clouds2" alt="">
             </div>
 
         </div>
@@ -43,11 +43,11 @@
         <div class="flex w-full">
             <!-- sidebar starts here -->
             <div class="sticky top-0 relative z-[99]">
-                <div class="sidebar md:m-2 xl:m-5 lg:m-10">
+                <div class="sidebar md:m-2 xl:ml-10">
                     <div class="flex justify-between w-full">
                         <div class="logo">
 
-                            <img src="/assets/images/logo.png" alt="">
+                            <img src="assets/images/logo.png" alt="">
                         </div>
                         <div class="hamMenu">
                             <div></div>
@@ -91,7 +91,7 @@
                         <div class="itemButton">
                             <button>
                                 <div class="iconBG">
-                                    <img src="/assets/images/icons/premium.svg" alt="">
+                                    <img src="assets/images/icons/premium.svg" alt="">
                                 </div>
                                 <div class="btnText">
                                     Get Premium
@@ -115,10 +115,10 @@
             <div class="contentMainDiv">
                 <div class="TopnavDiv sticky top-8">
                     <div class="partnerDiv">
-                        <img src="/assets/images/image2.png" alt="">Become a partner
+                        <img src="assets/images/image2.png" alt="">Become a partner
                     </div>
                     <div class="partnerDiv">
-                        <img src="/assets/images/image2.png" alt="">Become a partner
+                        <img src="assets/images/image2.png" alt="">Become a partner
                     </div>
                 </div>
                 <ul class="nav nav-tabs flex flex-row flex-wrap list-none border-b-0 pl-0 md:mb-4 sticky top-5 z-[99]"
@@ -135,7 +135,7 @@
                     active
                     " id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab"
                             aria-controls="tabs-home" aria-selected="true">
-                            <img src="/assets/images/icons/plane.png" alt="">
+                            <img src="assets/images/icons/plane.png" alt="">
                             <p class="text-[0.85em] mt-1 text-white">Flights</p>
                         </a>
                     </li>
@@ -150,7 +150,7 @@
                     mx-4
                     " id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab"
                             aria-controls="tabs-profile" aria-selected="false"> <img
-                                src="/assets/images/icons/hotels.png" alt="">
+                                src="assets/images/icons/hotels.png" alt="">
                             <p class="text-[0.85em] mt-1 text-white">Hotels</p>
 
                         </a>
@@ -166,7 +166,7 @@
                     mx-4
                     " id="tabs-messages-tab" data-bs-toggle="pill" data-bs-target="#tabs-messages" role="tab"
                             aria-controls="tabs-messages" aria-selected="false">
-                            <img src="/assets/images/icons/car.png" alt="">
+                            <img src="assets/images/icons/car.png" alt="">
                             <p class="text-[0.85em] mt-1 text-white">Villas</p>
 
                         </a>
@@ -176,10 +176,9 @@
                 <div class="tab-content" id="tabs-tabContent">
                     <div class="tab-pane fade show active" id="tabs-home" role="tabpanel"
                         aria-labelledby="tabs-home-tab">
-                        <div
-                            class="flex flex-wrap items-center justify-start items-center w-full">
+                        <div class="flex flex-col md:flex-row md:flex-wrap items-center justify-start items-center w-full">
 
-                            <div class="relative">
+                            <div class="relative w-full md:w-auto">
                                 <p class="labelSelectBox pb-4">FROM</p>
                                 <div class="customSelectBox">
                                     <ul class="list-unstyled">
@@ -198,10 +197,10 @@
                                 </div>
                             </div>
 
-                            <div class="relative">
+                            <div class="relative w-full md:w-auto">
                                 <p class="labelSelectBox ">CHECKIN-IN</p>
                                 <div class="customDatePicker">
-                                    <div class="flex items-center justify-center">
+                                    <div class="md:mx-4">
                                         <div class="datepicker relative form-floating" data-mdb-toggle-button="false">
                                             <input type="text"
                                                 class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -211,10 +210,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="relative">
+                            <div class="relative w-full md:w-auto">
                                 <p class="labelSelectBox">CHECKIN-OUT</p>
                                 <div class="customDatePicker">
-                                    <div class="flex items-center justify-center">
+                                    <div class="md:mx-4">
                                         <div class="datepicker relative form-floating" data-mdb-toggle-button="false">
                                             <input type="text"
                                                 class="form-control block w-full  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -224,20 +223,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="relative">
+                            <div class="relative w-full md:w-auto">
                                 <p class="labelSelectBox pb-4">Room Guests</p>
-                                <div class="customSelectBox mr-5">
+                                <div class="customSelectBox md:mr-5">
                                     <select class="form-control">
                                         <option class="optionSelect"> One</option>
                                         <option class="optionSelect"> TWo</option>
                                         <option class="optionSelect"> One</option>
                                         <option class="optionSelect"> One</option>
                                         <option class="optionSelect"> One</option>
-                                       
+
                                     </select>
                                 </div>
                             </div>
-                            <div class="relative">
+                            <div class="relative w-full md:w-auto">
                                 <p class="labelSelectBox pb-4">Room Guests</p>
                                 <div class="customSelectBox">
                                     <select class="form-control">
@@ -246,11 +245,11 @@
                                         <option class="optionSelect"> One</option>
                                         <option class="optionSelect"> One</option>
                                         <option class="optionSelect"> One</option>
-                                       
+
                                     </select>
                                 </div>
                             </div>
-                           
+
                             <div>
                                 <div class="btnDiv pt-5">
                                     <button>
@@ -259,7 +258,7 @@
                                 </div>
                             </div>
 
-                            
+
                         </div>
 
 
@@ -278,26 +277,27 @@
                     </div>
                 </div>
 
-                <div class="contentContainer">
+                <div class="contentContainer flex md:flex-row flex-col">
                     <div class="cardContentMainDiv">
                         <div class="contentHead">
-                            <div class="flex gap-4 items-center self-center"> <h2 class="head"> Hotels</h2>
+                            <div class="flex gap-4 items-center self-center">
+                                <h2 class="head"> Hotels</h2>
                                 <p> Total <span> 126 result</span> </p>
                             </div>
                             <div class="buttonsGrup">
                                 <button>Popular</button>
                                 <button>Guest ratings</button>
                                 <button>Price</button>
-                                <button>Map View</button>
+                                <button>More</button>
                             </div>
-                           </div>
-                           <div class="contentBody">
+                        </div>
+                        <div class="contentBody">
                             <div class="placeDetailCard">
                                 <div class="ratingMark"> <span></span>
-                                <p> 4.8</p>
+                                    <p> 4.8</p>
                                 </div>
                                 <div class="imgDiv">
-                                <img src="/assets/images/image2.png" alt="">
+                                    <img src="assets/images/image2.png" alt="">
                                 </div>
                                 <div class="detailsDiv">
                                     <h3 class="name"> Taj Fort resort & Spa Goa</h3>
@@ -305,29 +305,79 @@
                                         <p class="nearBy"> Near Railway Station</p>
                                         <p class="mapBtn">MAP VIEW</p>
                                     </div>
-                                    
+
                                     <div class="facilities">
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
-                                     
+
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between w-full pt-5">
+                                        <div class="priceDetails">
+                                            <h3>$473</h3>
+                                        </div>
+                                        <div class="cardBtns">
+                                            <button class="viewDetails"> View details</button>
+                                            <button class="bookNow">BOOK NOW</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="placeDetailCard">
+                                <div class="ratingMark"> <span></span>
+                                    <p> 4.8</p>
+                                </div>
+                                <div class="imgDiv">
+                                    <img src="assets/images/image2.png" alt="">
+                                </div>
+                                <div class="detailsDiv">
+                                    <h3 class="name"> Taj Fort resort & Spa Goa</h3>
+                                    <div class="flex justify-between w-full">
+                                        <p class="nearBy"> Near Railway Station</p>
+                                        <p class="mapBtn">MAP VIEW</p>
+                                    </div>
+
+                                    <div class="facilities">
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+
                                     </div>
                                     <div class="flex justify-between w-full pt-5">
                                         <div class="priceDetails">
@@ -338,16 +388,16 @@
                                             <button class="bookNow">BOOK NOW</button>
                                         </div>
                                     </div>
-                                   
-                                  
+
+
                                 </div>
                             </div>
                             <div class="placeDetailCard">
                                 <div class="ratingMark"> <span></span>
-                                <p> 4.8</p>
+                                    <p> 4.8</p>
                                 </div>
                                 <div class="imgDiv">
-                                <img src="/assets/images/image2.png" alt="">
+                                    <img src="assets/images/image2.png" alt="">
                                 </div>
                                 <div class="detailsDiv">
                                     <h3 class="name"> Taj Fort resort & Spa Goa</h3>
@@ -355,29 +405,29 @@
                                         <p class="nearBy"> Near Railway Station</p>
                                         <p class="mapBtn">MAP VIEW</p>
                                     </div>
-                                    
+
                                     <div class="facilities">
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
                                         <div class="itemOne">
-                                            <img src="/assets/images/icons/location.png" alt="">
+                                            <img src="assets/images/icons/location.png" alt="">
                                             Parking
                                         </div>
-                                     
+
                                     </div>
                                     <div class="flex justify-between w-full pt-5">
                                         <div class="priceDetails">
@@ -388,44 +438,212 @@
                                             <button class="bookNow">BOOK NOW</button>
                                         </div>
                                     </div>
-                                   
-                                  
+
+
                                 </div>
                             </div>
-                            
-                           </div>
+                            <div class="placeDetailCard">
+                                <div class="ratingMark"> <span></span>
+                                    <p> 4.8</p>
+                                </div>
+                                <div class="imgDiv">
+                                    <img src="assets/images/image2.png" alt="">
+                                </div>
+                                <div class="detailsDiv">
+                                    <h3 class="name"> Taj Fort resort & Spa Goa</h3>
+                                    <div class="flex justify-between w-full">
+                                        <p class="nearBy"> Near Railway Station</p>
+                                        <p class="mapBtn">MAP VIEW</p>
+                                    </div>
+
+                                    <div class="facilities">
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+                                        <div class="itemOne">
+                                            <img src="assets/images/icons/location.png" alt="">
+                                            Parking
+                                        </div>
+
+                                    </div>
+                                    <div class="flex justify-between w-full pt-5">
+                                        <div class="priceDetails">
+                                            <h3>$473</h3>
+                                        </div>
+                                        <div class="cardBtns">
+                                            <button class="viewDetails"> View details</button>
+                                            <button class="bookNow">BOOK NOW</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="filterCard">
                         <div class="filterHead">Filters</div>
                         <div class="filtercardBody">
                             <div class="priceRange">
                                 <div class="relative pt-1">
                                     <label for="customRange3" class="form-label">Price range</label>
-                                    <input
-                                      type="range"
-                                      class="
-                                        form-range
-                                        appearance-none
-                                        w-full
-                                        h-6
-                                        p-0
-                                        bg-transparent
-                                        focus:outline-none focus:ring-0 focus:shadow-none
-                                      "
-                                      min="0"
-                                      max="5"
-                                      step="0.5"
-                                      id="customRange3"
-                                    />
-                                  </div>
+                                    <input type="range" class="
+                                            form-range
+                                            appearance-none
+                                            w-full
+                                            h-6
+                                            p-0
+                                            bg-transparent
+                                            focus:outline-none focus:ring-0 focus:shadow-none
+                                          " min="0" max="5" step="0.5" id="customRange3" />
+                                </div>
                             </div>
+                                <div class="accordion-item bg-white border border-gray-200">
+                                    <h2 class="accordion-header mb-0" id="headingOne">
+                                        <button class="
+                                          accordion-button
+                                          relative
+                                          flex
+                                          items-center
+                                          w-full
+                                          py-4
+                                          px-5
+                                          text-base text-gray-800 text-left
+                                          bg-white
+                                          border-0
+                                          rounded-none
+                                          transition
+                                          focus:outline-none
+                                        " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            Price Range
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body py-4 px-5">
+                                            <div class="priceRange">
+                                                <div class="relative pt-1">
+                                                    <label for="customRange3" class="form-label">Price range</label>
+                                                    <input type="range" class="
+                                                        form-range
+                                                        appearance-none
+                                                        w-full
+                                                        h-6
+                                                        p-0
+                                                        bg-transparent
+                                                        focus:outline-none focus:ring-0 focus:shadow-none
+                                                      " min="0" max="5" step="0.5" id="customRange3" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-white border border-gray-200">
+                                    <h2 class="accordion-header mb-0" id="headingTwo">
+                                        <button class="
+                                          accordion-button
+                                          collapsed
+                                          relative
+                                          flex
+                                          items-center
+                                          w-full
+                                          py-4
+                                          px-5
+                                          text-base text-gray-800 text-left
+                                          bg-white
+                                          border-0
+                                          rounded-none
+                                          transition
+                                          focus:outline-none
+                                        " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Rating
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body py-4 px-5">
+                                            <strong>This is the second item's accordion body.</strong> It is hidden by
+                                            default,
+                                            until the collapse plugin adds the appropriate classes that we use to style
+                                            each
+                                            element. These classes control the overall appearance, as well as the
+                                            showing and
+                                            hiding via CSS transitions. You can modify any of this with custom CSS or
+                                            overriding
+                                            our default variables. It's also worth noting that just about any HTML can
+                                            go within
+                                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-white border border-gray-200">
+                                    <h2 class="accordion-header mb-0" id="headingThree">
+                                        <button class="
+                                          accordion-button
+                                          collapsed
+                                          relative
+                                          flex
+                                          items-center
+                                          w-full
+                                          py-4
+                                          px-5
+                                          text-base text-gray-800 text-left
+                                          bg-white
+                                          border-0
+                                          rounded-none
+                                          transition
+                                          focus:outline-none
+                                        " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Accordion Item #3
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body py-4 px-5">
+                                            <strong>This is the third item's accordion body.</strong> It is hidden by
+                                            default,
+                                            until the collapse plugin adds the appropriate classes that we use to style
+                                            each
+                                            element. These classes control the overall appearance, as well as the
+                                            showing and
+                                            hiding via CSS transitions. You can modify any of this with custom CSS or
+                                            overriding
+                                            our default variables. It's also worth noting that just about any HTML can
+                                            go within
+                                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                            
+
                         </div>
                     </div>
+
+
                 </div>
 
 
 
             </div>
+             <!-- contetn Ends Main Div------ -->
+
         </div>
 
     </div>
